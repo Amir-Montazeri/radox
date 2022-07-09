@@ -1,10 +1,10 @@
-// import { GlobalStyles } from "@mui/material";
-// import styles from "./globalStyles";
+import { GlobalStyles } from "@mui/material";
+import styles from "./globalStyles";
 
 const App = () => {
   return (
     <main>
-      {/* <GlobalStyles styles={styles} /> */}
+      <GlobalStyles styles={styles} />
       <h1>Title</h1>
     </main>
   );
