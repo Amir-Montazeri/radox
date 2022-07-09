@@ -4,7 +4,12 @@ import { NavbarComponents } from "components";
 
 const Navbar = () => {
   return (
-    <Grid container sx={containerStyles}>
+    <Grid
+      container
+      justifyContent="space-evenly"
+      alignItems="center"
+      sx={containerStyles}
+    >
       <NavbarComponents />
     </Grid>
   );
