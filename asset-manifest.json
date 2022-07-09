@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/radox/static/js/main.9e8532d3.js",
+    "index.html": "/radox/index.html",
+    "main.9e8532d3.js.map": "/radox/static/js/main.9e8532d3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9e8532d3.js"
+  ]
+}
