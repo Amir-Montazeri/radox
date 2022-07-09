@@ -26,7 +26,7 @@ const useWindowSize = () => {
   useEffect(() => {
     const timerID = setTimeout(() => {
       setDebouncedSize(size);
-    }, 50);
+    }, 10);
 
     return () => clearTimeout(timerID);
   }, [size]);
