@@ -1,5 +1,6 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { GiHamburgerMenu } from "react-icons/gi";
+import useWindowSize from "hooks/useWindowSize";
 import Input from "./Input";
 import {
   containerStyles,
@@ -10,6 +11,8 @@ import {
 } from "./rightSectionStyles";
 
 const RightSection = () => {
+  const { innerWidth } = useWindowSize();
+
   return (
     <Grid container sx={containerStyles}>
       <Grid item sx={registerContainerStyles}>
@@ -26,9 +29,7 @@ const RightSection = () => {
           </Typography>
         </Button>
       </Grid>
-      <Grid item>
-        <Input />
-      </Grid>
+      <Grid item>{innerWidth >= 701 ? <Input /> : <div>Res</div>}</Grid>
       <Grid item sx={menuIconContainerStyles}>
         <GiHamburgerMenu color="#EE5D25" />
       </Grid>

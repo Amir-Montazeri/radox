@@ -7,18 +7,31 @@ const getWindowSize = () => {
 
 const useWindowSize = () => {
   const [size, setSize] = useState({ innerWidth: "", innerHeight: "" });
+  const [debouncedSize, setDebouncedSize] = useState(size);
 
   useEffect(() => {
+    const handleWindowResize = () => {
+      setSize(getWindowSize);
+    };
+
     setSize(getWindowSize());
 
-    window.addEventListener("resize", getWindowSize);
+    window.addEventListener("resize", handleWindowResize);
 
     return () => {
-      window.removeEventListener("resize", getWindowSize);
+      window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
-  return size;
+  useEffect(() => {
+    const timerID = setTimeout(() => {
+      setDebouncedSize(size);
+    }, 200);
+
+    return () => clearTimeout(timerID);
+  }, [size]);
+
+  return debouncedSize;
 };
 
 export default useWindowSize;
