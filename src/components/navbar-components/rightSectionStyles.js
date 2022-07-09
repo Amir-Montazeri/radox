@@ -17,7 +17,7 @@ export const containerStyles = {
       background: "#EE5D25",
     },
     "> button:hover": {
-      background: "#EE5D25 !important",
+      // background: "#EE5D25 !important",
     },
   },
   buttonTextContainer = {
