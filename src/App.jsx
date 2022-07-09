@@ -1,11 +1,13 @@
 import { GlobalStyles } from "@mui/material";
 import styles from "./globalStyles";
+import { Navbar, Home } from "pages";
 
 const App = () => {
   return (
     <main>
       <GlobalStyles styles={styles} />
-      <h1>Title</h1>
+      <Navbar />
+      <Home />
     </main>
   );
 };
