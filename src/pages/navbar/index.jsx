@@ -1,16 +1,24 @@
 import { Grid } from "@mui/material";
 import { containerStyles } from "./navbarStyles";
-import { NavbarComponents } from "components";
+import { NavbarComponents, ResNavInput } from "components";
+import useWindowSize from "hooks/useWindowSize";
 
 const Navbar = () => {
+  const { innerWidth } = useWindowSize();
+
   return (
     <Grid
       container
+      flexDirection="column"
       justifyContent="space-evenly"
-      alignItems="center"
       sx={containerStyles}
     >
-      <NavbarComponents />
+      <Grid item>
+        <Grid container justifyContent="space-evenly" alignItems="center">
+          <NavbarComponents />
+        </Grid>
+      </Grid>
+      {innerWidth <= 730 && <ResNavInput />}
     </Grid>
   );
 };

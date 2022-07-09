@@ -1,5 +1,4 @@
 import { Grid } from "@mui/material";
-import { containerStyles } from "./navbarComponentsStyles";
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
 

@@ -29,7 +29,7 @@ const RightSection = () => {
           </Typography>
         </Button>
       </Grid>
-      <Grid item>{innerWidth >= 701 ? <Input /> : <div>Res</div>}</Grid>
+      <Grid item>{innerWidth >= 730 && <Input />}</Grid>
       <Grid item sx={menuIconContainerStyles}>
         <GiHamburgerMenu color="#EE5D25" />
       </Grid>

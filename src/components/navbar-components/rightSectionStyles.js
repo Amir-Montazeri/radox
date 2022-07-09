@@ -1,6 +1,6 @@
 export const containerStyles = {
     "> div": {
-      height: "40px",
+      height: "40px !important",
       marginLeft: "10px",
     },
   },
