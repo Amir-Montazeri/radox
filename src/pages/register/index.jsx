@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
 	AuthComponents,
 	AuthForm,
@@ -6,7 +7,22 @@ import {
 } from 'components';
 import { buttonItems, textFieldItems } from './sampleDatas';
 
-function Register() {
+const Register = () => {
+	const handleSubmit = data => {
+		const { username, phoneNumber } = data;
+		axios
+			.post(`${process.env.REACT_APP_BASE_API_LINK}`, {
+				username,
+				phoneNumber,
+			})
+			.then(res => {
+				console.log('success! ', res);
+			})
+			.catch(err => {
+				console.log('err! ', err);
+			});
+	};
+
 	return (
 		<AuthComponents title='عضو جدید'>
 			<AuthForm
@@ -14,9 +30,10 @@ function Register() {
 				textFieldFooters={<RegisterTextfieldFooter />}
 				buttonItems={buttonItems}
 				footer={<RegisterFooter />}
+				formSubmited={handleSubmit}
 			/>
 		</AuthComponents>
 	);
-}
+};
 
 export default Register;

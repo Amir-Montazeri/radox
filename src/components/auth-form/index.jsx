@@ -8,6 +8,7 @@ const AuthForm = ({
 	textFieldFooters,
 	buttonItems,
 	footer,
+	formSubmited,
 }) => {
 	const [innerValue, setInnerValues] = useState({});
 
@@ -20,8 +21,13 @@ const AuthForm = ({
 		}
 	}, [textFieldItems]);
 
+	const submitHandeler = e => {
+		e.preventDefault();
+		formSubmited(innerValue);
+	};
+
 	return (
-		<Box>
+		<Box component='form' onSubmit={submitHandeler}>
 			<RenderedTextFields
 				values={innerValue}
 				setValue={setInnerValues}

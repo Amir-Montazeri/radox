@@ -6,7 +6,7 @@ export const textFieldItems = [
 		icon: '',
 	},
 	{
-		name: 'phone_number',
+		name: 'phoneNumber',
 		placeholder: 'شماره همراه',
 		type: 'tel',
 		icon: '',
