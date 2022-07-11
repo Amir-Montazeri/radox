@@ -1,5 +1,9 @@
 import { Grid, Typography } from "@mui/material";
-import { containerStyles } from "./itemStyles";
+import {
+  containerStyles,
+  iconContainerStyles,
+  titleStyles,
+} from "./itemStyles";
 
 export const Item = ({ title, iconAsImg }) => {
   return (
@@ -10,12 +14,12 @@ export const Item = ({ title, iconAsImg }) => {
       sx={containerStyles}
     >
       <Grid item>
-        <Typography variant="h6" component="h3">
+        <Typography variant="h6" component="h3" sx={titleStyles}>
           {title}
         </Typography>
       </Grid>
-      <Grid item>
-        <img src={iconAsImg} alt={title} />
+      <Grid item sx={iconContainerStyles}>
+        <img src={iconAsImg} alt={title} height="100%" />
       </Grid>
     </Grid>
   );

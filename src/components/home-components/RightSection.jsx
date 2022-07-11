@@ -1,133 +1,74 @@
-import { Box, Grid } from '@mui/material';
-import { SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
-import { SwiperComponent } from 'components';
-import { containerStyles } from './rightSectionStyles';
-import sampleSwiperItems from './sampleSwiperItems.json';
+import { Box, Button, Grid, Typography } from "@mui/material";
+import { Autoplay } from "swiper";
+import { SwiperSlide } from "swiper/react";
+import { SwiperComponent } from "components";
+import {
+  containerStyles,
+  slidesImgStyles,
+  containerOnSliderStyles,
+  introContainerStyles,
+  introTitleStyles,
+  introContentStyles,
+  introBtnStyles,
+  childrenContainerStyles,
+} from "./rightSectionStyles";
+import { slidesItems } from "./sampleSwiperItems";
 
 const config = {
-	autoplay: {
-		delay: 2500,
-		disableOnInteraction: false,
-	},
-	modules: [Autoplay],
+  spaceBetween: 50,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  modules: [Autoplay],
 };
 
-const RightSection = () => {
-	return (
-		<Grid item sx={containerStyles}>
-			<SwiperComponent swiperConfig={config}>
-				<SwiperSlide>
-					{/* <Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Box
-						sx={{
-							background: `url(${homeBg})`,
-							height: '100%',
-							width: '100%',
-							backgroundRepeat: 'no-repeat',
-							backgroundSize: 'cover',
-							backgroundPosition: 'center',
-						}}
-					/> */}
-				</SwiperSlide>
-			</SwiperComponent>
-		</Grid>
-	);
+const RightSection = ({ children, isDragged = false }) => {
+  const renderedSlides = (items) =>
+    items.map(({ id, bgLink }) => {
+      return (
+        <SwiperSlide key={id}>
+          <Box
+            sx={{
+              background: `url(${bgLink})`,
+              ...slidesImgStyles,
+            }}
+          ></Box>
+        </SwiperSlide>
+      );
+    });
+
+  return (
+    <Grid item sx={containerStyles}>
+      <SwiperComponent swiperConfig={config}>
+        {renderedSlides(slidesItems)}
+      </SwiperComponent>
+      <Box sx={{ ...containerOnSliderStyles, ...introContainerStyles }}>
+        <Typography
+          variant="h3"
+          component="h1"
+          color="#E3CDF9"
+          sx={introTitleStyles}
+        >
+          آرادوکس
+        </Typography>
+        <Typography
+          variant="h6"
+          component="p"
+          color="#fff"
+          sx={introContentStyles}
+        >
+          شبکه ارتباطی بزرگ خدمات تهیه غذا در استان تهران
+        </Typography>
+        <Button sx={introBtnStyles}>بیشتر بدانیم</Button>
+      </Box>
+      {(children || isDragged) && (
+        <Box sx={{ ...containerOnSliderStyles, ...childrenContainerStyles }}>
+          {children}
+        </Box>
+      )}
+    </Grid>
+  );
 };
 
 export default RightSection;
