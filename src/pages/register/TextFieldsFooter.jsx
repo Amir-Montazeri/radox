@@ -28,7 +28,7 @@ const TextFieldsFooter = ({ setTypeValue }) => {
       row
       value={selectedValue}
       onChange={handleChange}
-      sx={{ direction: "rtl" }}
+      sx={{ direction: "rtl", display: "flex" }}
     >
       {renderedItems(selectItems)}
     </RadioGroup>
