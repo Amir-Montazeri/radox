@@ -17,7 +17,7 @@ import { slidesItems } from "./sampleSwiperItems";
 const config = {
   spaceBetween: 50,
   autoplay: {
-    delay: 2500,
+    delay: 4000,
     disableOnInteraction: false,
   },
   modules: [Autoplay],

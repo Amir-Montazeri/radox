@@ -29,14 +29,10 @@ export const buttonItems = [
 export const selectItems = [
   {
     title: "نیروی کار",
-    value: "work force",
+    value: "force",
   },
   {
-    title: "کارفرما",
-    value: "employer",
-  },
-  {
-    title: "آماده به کار",
-    value: "ready_to_work",
+    title: "تامین کننده",
+    value: "supplier",
   },
 ];
