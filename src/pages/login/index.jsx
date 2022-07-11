@@ -1,14 +1,16 @@
 import axios from "axios";
-import {
-  AuthComponents,
-  AuthForm,
-  RegisterFooter,
-  RegisterTextfieldFooter,
-} from "components";
+import { AuthComponents, AuthForm, RegisterTextfieldFooter } from "components";
 import { Home } from "pages";
+import Footer from "./Footer";
 import { buttonItems, textFieldItems } from "./sampleDatas";
 
 const Login = () => {
+  const footer = (
+    <RegisterTextfieldFooter>
+      <Footer />
+    </RegisterTextfieldFooter>
+  );
+
   const handleSubmit = (data) => {
     const { username, phoneNumber } = data;
     axios
@@ -29,9 +31,8 @@ const Login = () => {
       <AuthComponents title="ورود کاربر">
         <AuthForm
           textFieldItems={textFieldItems}
-          textFieldFooters={<RegisterTextfieldFooter />}
+          textFieldFooters={footer}
           buttonItems={buttonItems}
-          footer={<RegisterFooter />}
           formSubmited={handleSubmit}
         />
       </AuthComponents>

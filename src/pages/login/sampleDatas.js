@@ -30,5 +30,6 @@ export const buttonItems = [
     color: "#EE5D25",
     bgcolor: "#FFE8E0",
     width: "100%",
+    navigateOnClicked: { to: "/auth/register" },
   },
 ];

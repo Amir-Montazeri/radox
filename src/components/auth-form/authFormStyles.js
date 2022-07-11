@@ -4,6 +4,7 @@ export const containerStyles = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "space-evenly",
   "> *": {
     marginBottom: "20px !important",
   },

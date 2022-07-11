@@ -8,6 +8,10 @@ const styles = {
     background: "#fff",
     overflowX: "hidden",
   },
+  a: {
+    textDecoration: "none",
+    color: "#000",
+  },
 };
 
 export default styles;
