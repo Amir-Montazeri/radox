@@ -4,7 +4,11 @@ export const containerStyles = {
     height: "121px",
     background: "#fff",
     cursor: "pointer",
-    "@media screen and (max-width: 810px)": {
+    "@media screen and (max-width: 730px)": {
+      width: "220px",
+      height: "80px",
+    },
+    "@media screen and (max-width: 510px)": {
       width: "138px",
       height: "64px",
     },

@@ -1,11 +1,11 @@
 import LeftSection from "./LeftSection";
 import RightSection from "./RightSection";
 
-const HomeComponents = () => {
+const HomeComponents = ({ children }) => {
   return (
     <>
       <LeftSection />
-      <RightSection />
+      <RightSection children={children || null} />
     </>
   );
 };
