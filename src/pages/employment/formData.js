@@ -185,9 +185,9 @@ export const personalTextFields = [
         },
         {
           inputProps: {
-            name: "phone_number",
-            placeholder: "شماره همراه",
-            type: "tel",
+            name: "companyName",
+            placeholder: "نام مجموعه/شرکت",
+            type: "text",
           },
           icon: phoneNumberIcon,
           id: 1,
