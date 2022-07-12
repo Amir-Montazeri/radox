@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import { AuthComponents, EmploymentHeader, EmploymentForm } from "components";
 import { headerContainerStyles, formContainerStyles } from "./employmentStyles";
-import { personalTextFields } from "./formData";
+import { personalTextFields, officeTextFields } from "./formData";
 import { usualItems } from "./headerItemsData";
 
 function Employment() {
@@ -16,6 +16,14 @@ function Employment() {
           styles={{ width: "672px", height: "478px" }}
         >
           <EmploymentForm textFieldItems={personalTextFields} />
+        </AuthComponents>
+      </Box>
+      <Box sx={formContainerStyles}>
+        <AuthComponents
+          title="اطلاعات شغلی"
+          styles={{ width: "672px", height: "478px" }}
+        >
+          <EmploymentForm textFieldItems={officeTextFields} />
         </AuthComponents>
       </Box>
     </Box>
