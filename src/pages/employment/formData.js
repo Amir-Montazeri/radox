@@ -10,16 +10,20 @@ export const personalTextFields = [
   {
     items: [
       {
-        name: "fullname",
-        placeholder: "نام و نام خانوادگی",
-        type: "text",
+        inputProps: {
+          name: "fullname",
+          placeholder: "نام و نام خانوادگی",
+          type: "text",
+        },
         icon: accountIcon,
         id: 0,
       },
       {
-        name: "phone_number",
-        placeholder: "شماره همراه",
-        type: "tel",
+        inputProps: {
+          name: "phone_number",
+          placeholder: "شماره همراه",
+          type: "tel",
+        },
         icon: phoneNumberIcon,
         id: 1,
       },
@@ -29,16 +33,20 @@ export const personalTextFields = [
   {
     items: [
       {
-        name: "birth",
-        placeholder: "تاریخ تولد",
-        type: "date",
+        inputProps: {
+          name: "birth",
+          placeholder: "تاریخ تولد",
+          type: "date",
+        },
         icon: birthIcon,
         id: 2,
       },
       {
-        name: "degree",
-        placeholder: "مدرک تحصیلی",
-        type: "select",
+        inputProps: {
+          name: "degree",
+          placeholder: "مدرک تحصیلی",
+          type: "select",
+        },
         icon: degreeIcon,
         id: 3,
       },
@@ -48,16 +56,20 @@ export const personalTextFields = [
   {
     items: [
       {
-        name: "Nationality",
-        placeholder: "ملیت",
-        type: "select",
+        inputProps: {
+          name: "Nationality",
+          placeholder: "ملیت",
+          type: "select",
+        },
         icon: nationalityIcon,
         id: 4,
       },
       {
-        name: "gender",
-        placeholder: "جنسیت",
-        type: "select",
+        inputProps: {
+          name: "gender",
+          placeholder: "جنسیت",
+          type: "select",
+        },
         icon: genderIcon,
         id: 5,
       },
@@ -67,9 +79,11 @@ export const personalTextFields = [
   {
     items: [
       {
-        name: "address",
-        placeholder: "آدرس",
-        type: "select",
+        inputProps: {
+          name: "address",
+          placeholder: "آدرس",
+          type: "select",
+        },
         icon: addressIcon,
         id: 6,
       },
