@@ -1,7 +1,7 @@
 import { GlobalStyles } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./globalStyles";
-import { Navbar, Home, Register, Login } from "pages";
+import { Navbar, Home, Register, Login, Employment } from "pages";
 
 const App = () => {
   return (
@@ -15,6 +15,7 @@ const App = () => {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Route>
+          <Route path="/employment" element={<Employment />} />
           <Route path="*" element={<div>Not Found</div>} />
         </Routes>
       </Router>
