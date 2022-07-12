@@ -14,6 +14,7 @@ export const containerStyles = {
       width: "114px",
     },
     "@media screen and (max-width: 720px)": {
+      height: "60px",
       margin: 0,
     },
   },

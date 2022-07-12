@@ -6,7 +6,7 @@ import {
   formContainerStyles,
 } from "./authComponentsStyles";
 
-function AuthComponents({ children, title }) {
+function AuthComponents({ children, styles = {}, title }) {
   return (
     <Grid
       container
@@ -20,7 +20,7 @@ function AuthComponents({ children, title }) {
             {title}
           </Typography>
         </Box>
-        <Box sx={formContainerStyles}>{children}</Box>
+        <Box sx={{ ...formContainerStyles, ...styles }}>{children}</Box>
       </Grid>
     </Grid>
   );

@@ -16,6 +16,7 @@ export const headerContainerStyles = {
     width: "50%",
     display: "flex !important",
     justifyContent: "center",
+    zIndex: 3,
     "@media screen and (max-width: 720px)": {
       justifyContent: "center",
       alignItems: "center",

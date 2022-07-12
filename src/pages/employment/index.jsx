@@ -1,13 +1,24 @@
-import { Grid } from "@mui/material";
-import { EmploymentHeader } from "components";
-import { containerStyles } from "./employmentStyles";
+import { Box, Grid } from "@mui/material";
+import { AuthComponents, EmploymentHeader, EmploymentForm } from "components";
+import { headerContainerStyles, formContainerStyles } from "./employmentStyles";
+import { personalTextFields } from "./formData";
 import { usualItems } from "./headerItemsData";
 
 function Employment() {
   return (
-    <Grid container sx={containerStyles}>
-      <EmploymentHeader headerItems={usualItems} avatarUrl={""} />
-    </Grid>
+    <Box>
+      <Grid container sx={headerContainerStyles}>
+        <EmploymentHeader headerItems={usualItems} avatarUrl={""} />
+      </Grid>
+      <Box sx={formContainerStyles}>
+        <AuthComponents
+          title="اطلاعات فردی"
+          styles={{ width: "672px", height: "478px" }}
+        >
+          <EmploymentForm textFieldItems={personalTextFields} />
+        </AuthComponents>
+      </Box>
+    </Box>
   );
 }
 
