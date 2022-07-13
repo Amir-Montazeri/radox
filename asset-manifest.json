@@ -1,11 +1,32 @@
 {
   "files": {
-    "main.js": "/radox/static/js/main.80e75854.js",
+    "main.css": "/radox/static/css/main.b61362e6.css",
+    "main.js": "/radox/static/js/main.12509f46.js",
+    "static/media/home-bg.png": "/radox/static/media/home-bg.275b4ca6c4d3725b4bf0.png",
+    "static/media/instagram.svg": "/radox/static/media/instagram.2e14b84905341e5cb3b98824e91db336.svg",
     "static/media/aradox-logo.svg": "/radox/static/media/aradox-logo.ec4f24122251bb52249ad85214d36ecb.svg",
+    "static/media/res-aradox-logo.svg": "/radox/static/media/res-aradox-logo.ff5102449ff338a9f0ee97ce582d86ed.svg",
+    "static/media/birth.svg": "/radox/static/media/birth.77c97159ed0ee25f1a71b04024290e38.svg",
+    "static/media/nationality.svg": "/radox/static/media/nationality.71a0df5c0065b5395018e853dbb72019.svg",
+    "static/media/supplier.svg": "/radox/static/media/supplier.8f6a1d4bab325369bf8ab59ef06090df.svg",
+    "static/media/raw-material.svg": "/radox/static/media/raw-material.ee66f844277c8c01af81c15297ebdfea.svg",
+    "static/media/employment.svg": "/radox/static/media/employment.9cae1a06c8d3269773ea27a6ec582168.svg",
+    "static/media/ready-to-work.svg": "/radox/static/media/ready-to-work.f93416203413a9a86373723a5961e099.svg",
+    "static/media/degree.svg": "/radox/static/media/degree.4348eb4d9941b874561908d58da8a2a6.svg",
+    "static/media/phoneNumber.svg": "/radox/static/media/phoneNumber.00884b23c01f2b3b698a6ebc73252532.svg",
+    "static/media/telegram.svg": "/radox/static/media/telegram.2c1e218ff7905a830d53c7dbf283a648.svg",
+    "static/media/gender.svg": "/radox/static/media/gender.c7c3156e2368471a7b3aba55e3d110e1.svg",
+    "static/media/address.svg": "/radox/static/media/address.8466c6efdf6b620d2f1dfd03021377ac.svg",
+    "static/media/account.svg": "/radox/static/media/account.70c579aebef1a1cc573aeed9e512edd4.svg",
+    "static/media/facebook.svg": "/radox/static/media/facebook.cae591feb808c99eb18e020f04dea090.svg",
+    "static/media/password-icon.svg": "/radox/static/media/password-icon.d5c4758e447ea020718995068d61f40d.svg",
     "index.html": "/radox/index.html",
-    "main.80e75854.js.map": "/radox/static/js/main.80e75854.js.map"
+    "static/media/username-icon.svg": "/radox/static/media/username-icon.62a83271016967b92c99e193d1a81ec9.svg",
+    "main.b61362e6.css.map": "/radox/static/css/main.b61362e6.css.map",
+    "main.12509f46.js.map": "/radox/static/js/main.12509f46.js.map"
   },
   "entrypoints": [
-    "static/js/main.80e75854.js"
+    "static/css/main.b61362e6.css",
+    "static/js/main.12509f46.js"
   ]
 }
