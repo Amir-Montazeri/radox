@@ -14,7 +14,9 @@ const PersonalFooter = () => {
         </Typography>
       </Grid>
       <Grid item>
-        <Button sx={buttonStyles}>ذخیره</Button>
+        <Button sx={buttonStyles} type="submit">
+          ذخیره
+        </Button>
       </Grid>
     </Grid>
   );

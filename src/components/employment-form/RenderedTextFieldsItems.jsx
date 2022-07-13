@@ -1,4 +1,5 @@
 import { Box, Grid, TextField } from "@mui/material";
+import { useEffect, useState } from "react";
 import {
   containerStyles,
   fullWidthStyles,
@@ -7,18 +8,51 @@ import {
 } from "./renderedTextFieldsStyles";
 import SelectTextField from "./SelectTextField";
 
-const RenderedTextFieldsItems = ({ items }) => {
+const RenderedTextFieldsItems = ({ items, register, onChangedSelected }) => {
+  const [selectsSelectedValue, setSelectsSelectedValue] = useState({});
   const fullWidth = items.length === 1 ? fullWidthStyles : "";
+
+  useEffect(() => {
+    for (const i in items) {
+      const { type, name, selectItems } = items[i].inputProps;
+      if (type === "select") {
+        setSelectsSelectedValue((prevState) => ({
+          ...prevState,
+          [name]: selectItems[0].value,
+        }));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    onChangedSelected(selectsSelectedValue);
+  }, [selectsSelectedValue]);
 
   const inputTypes = (type, inputProps) => {
     const types = {
-      select: <SelectTextField selectorItems={inputProps.selectItems} />,
+      select: (
+        <SelectTextField
+          name={inputProps.name}
+          selectorItems={inputProps.selectItems}
+          selected={selectsSelectedValue}
+          setSelected={(data) =>
+            setSelectsSelectedValue((prevState) => ({
+              ...prevState,
+              ...data,
+            }))
+          }
+        />
+      ),
     };
     return types[type];
   };
 
   const defaultInput = (inputProps) => (
-    <TextField {...inputProps} sx={{ ...textFieldsStyles, ...fullWidth }} />
+    <TextField
+      {...inputProps}
+      {...register(inputProps.name)}
+      sx={{ ...textFieldsStyles, ...fullWidth }}
+    />
   );
 
   return items?.map(({ inputProps, icon, id }) => {

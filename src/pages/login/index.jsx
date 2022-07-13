@@ -22,6 +22,7 @@ const Login = () => {
         phone_number,
       })
       .then((res) => {
+        console.log(res);
         const { data } = res;
         if (data.code === 1) {
           setCodeSent(true);

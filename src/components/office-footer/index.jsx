@@ -17,7 +17,9 @@ const OfficeFooter = () => {
       sx={containerStyles}
     >
       <Grid item>
-        <Button sx={buttonStyles}>ذخیره</Button>
+        <Button sx={buttonStyles} type="submit">
+          ذخیره
+        </Button>
       </Grid>
       <Grid item sx={iconsContainerStyles}>
         <img src={facebookIcon} alt="facebook" />

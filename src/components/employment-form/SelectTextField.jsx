@@ -1,12 +1,9 @@
 import { TextField, MenuItem } from "@mui/material";
 import { textFieldsStyles } from "./renderedTextFieldsStyles";
-import { useState } from "react";
 
-const SelectTextField = ({ selectorItems }) => {
-  const [selected, setSelected] = useState(selectorItems[0].value);
-
+const SelectTextField = ({ name, selectorItems, selected, setSelected }) => {
   const handelChange = (e) => {
-    setSelected(e.target.value);
+    setSelected({ [name]: e.target.value });
   };
 
   const renderedSelection = (items) =>
@@ -21,7 +18,7 @@ const SelectTextField = ({ selectorItems }) => {
   return (
     <TextField
       select
-      value={selected}
+      value={selected[name] || "loading"}
       onChange={handelChange}
       sx={textFieldsStyles}
     >
