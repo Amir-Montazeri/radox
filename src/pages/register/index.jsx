@@ -28,8 +28,7 @@ const Register = () => {
       })
       .then((res) => {
         const { data } = res;
-        if (data.code === "1") {
-          console.log("okeye baba ", data);
+        if (data.code === 1) {
           setCodeSent(true);
         }
       })
@@ -41,7 +40,7 @@ const Register = () => {
   const handleSubmit = (data) => {
     const { otp, phone_number } = data;
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}`, {
+      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/register/verify/`, {
         otp,
         phone_number,
         type: selectedType,

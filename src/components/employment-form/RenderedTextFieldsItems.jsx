@@ -25,9 +25,11 @@ const RenderedTextFieldsItems = ({ items }) => {
     return (
       <Grid item key={id} sx={{ ...containerStyles, ...fullWidth }}>
         {inputTypes(inputProps?.type, inputProps) || defaultInput(inputProps)}
-        <Box sx={iconContainerStyles}>
-          <img src={icon} alt={inputProps?.name} width="100%" height="100%" />
-        </Box>
+        {icon && (
+          <Box sx={iconContainerStyles}>
+            <img src={icon} alt={inputProps?.name} width="100%" height="100%" />
+          </Box>
+        )}
       </Grid>
     );
   });

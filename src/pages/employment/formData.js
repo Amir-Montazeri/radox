@@ -11,18 +11,18 @@ export const personalTextFields = [
       items: [
         {
           inputProps: {
-            name: "fullname",
-            placeholder: "نام و نام خانوادگی",
-            type: "text",
+            name: "phone_number",
+            placeholder: "شماره همراه",
+            type: "tel",
           },
           icon: accountIcon,
           id: 0,
         },
         {
           inputProps: {
-            name: "phone_number",
-            placeholder: "شماره همراه",
-            type: "tel",
+            name: "fullname",
+            placeholder: "نام مجموعه/نام و نام خانوادگی",
+            type: "text",
           },
           icon: phoneNumberIcon,
           id: 1,
@@ -83,7 +83,50 @@ export const personalTextFields = [
       items: [
         {
           inputProps: {
-            name: "Nationality",
+            name: "city",
+            placeholder: "استان",
+            type: "select",
+            selectItems: [
+              {
+                title: "البرز",
+                value: "al",
+              },
+              {
+                title: "تهران",
+                value: "teh",
+              },
+            ],
+          },
+          icon: nationalityIcon,
+          id: 4,
+        },
+        {
+          inputProps: {
+            name: "state",
+            placeholder: "شهر",
+            type: "select",
+            selectItems: [
+              {
+                title: "کرج",
+                value: "krj",
+              },
+              {
+                title: "فردیس",
+                value: "far",
+              },
+            ],
+          },
+          icon: genderIcon,
+          id: 5,
+        },
+      ],
+      id: 2,
+    },
+    {
+      items: [
+        {
+          inputProps: {
+            name: "country",
             placeholder: "ملیت",
             type: "select",
             selectItems: [
@@ -92,16 +135,8 @@ export const personalTextFields = [
                 value: "ir",
               },
               {
-                title: "افغانستان",
+                title: "افغان",
                 value: "afg",
-              },
-              {
-                title: "تاجیکستان",
-                value: "taj",
-              },
-              {
-                title: "عراق",
-                value: "irq",
               },
             ],
           },
@@ -128,7 +163,21 @@ export const personalTextFields = [
           id: 5,
         },
       ],
-      id: 2,
+      id: 3,
+    },
+    {
+      items: [
+        {
+          inputProps: {
+            name: "email",
+            placeholder: "ایمیل",
+            type: "email",
+          },
+          icon: nationalityIcon,
+          id: 6,
+        },
+      ],
+      id: 4,
     },
     {
       items: [
@@ -139,10 +188,10 @@ export const personalTextFields = [
             type: "text",
           },
           icon: addressIcon,
-          id: 6,
+          id: 7,
         },
       ],
-      id: 3,
+      id: 5,
     },
   ],
   officeTextFields = [
@@ -180,7 +229,6 @@ export const personalTextFields = [
               },
             ],
           },
-          icon: accountIcon,
           id: 0,
         },
         {
@@ -189,7 +237,6 @@ export const personalTextFields = [
             placeholder: "نام مجموعه/شرکت",
             type: "text",
           },
-          icon: phoneNumberIcon,
           id: 1,
         },
       ],
@@ -199,46 +246,18 @@ export const personalTextFields = [
       items: [
         {
           inputProps: {
-            name: "birth",
-            placeholder: "تاریخ تولد",
-            type: "date",
+            name: "position",
+            placeholder: "سمت",
+            type: "text",
           },
-          icon: birthIcon,
           id: 2,
         },
         {
           inputProps: {
-            name: "degree",
-            placeholder: "مدرک تحصیلی",
-            type: "select",
-            selectItems: [
-              {
-                title: "سیکل",
-                value: "cycle",
-              },
-              {
-                title: "دیپلم",
-                value: "diploma",
-              },
-              {
-                title: "کاردانی",
-                value: "Associate ",
-              },
-              {
-                title: "کارشناسی",
-                value: "Bachelor",
-              },
-              {
-                title: "ارشد",
-                value: "Master",
-              },
-              {
-                title: "سایر",
-                value: "other",
-              },
-            ],
+            name: "colPeriod",
+            placeholder: "مدت همکاری",
+            type: "text",
           },
-          icon: degreeIcon,
           id: 3,
         },
       ],
@@ -248,48 +267,23 @@ export const personalTextFields = [
       items: [
         {
           inputProps: {
-            name: "Nationality",
-            placeholder: "ملیت",
+            name: "type",
+            placeholder: "نوع همکاری",
             type: "select",
             selectItems: [
               {
-                title: "ایران",
-                value: "ir",
-              },
-              {
-                title: "افغانستان",
-                value: "afg",
-              },
-              {
-                title: "تاجیکستان",
-                value: "taj",
-              },
-              {
-                title: "عراق",
-                value: "irq",
+                title: "",
               },
             ],
           },
-          icon: nationalityIcon,
           id: 4,
         },
         {
           inputProps: {
-            name: "gender",
-            placeholder: "جنسیت",
-            type: "select",
-            selectItems: [
-              {
-                title: "مذکر",
-                value: "male",
-              },
-              {
-                title: "مونث",
-                value: "female",
-              },
-            ],
+            name: "cost",
+            placeholder: "میزان حقوق دریافتی",
+            type: "text",
           },
-          icon: genderIcon,
           id: 5,
         },
       ],
@@ -299,11 +293,10 @@ export const personalTextFields = [
       items: [
         {
           inputProps: {
-            name: "address",
-            placeholder: "آدرس",
+            name: "desc",
+            placeholder: "توضیحات تکمیلی",
             type: "text",
           },
-          icon: addressIcon,
           id: 6,
         },
       ],

@@ -1,5 +1,10 @@
 import { Box, Grid } from "@mui/material";
-import { AuthComponents, EmploymentHeader, EmploymentForm } from "components";
+import {
+  AuthComponents,
+  EmploymentHeader,
+  EmploymentForm,
+  PersonalFooter,
+} from "components";
 import { headerContainerStyles, formContainerStyles } from "./employmentStyles";
 import { personalTextFields, officeTextFields } from "./formData";
 import { usualItems } from "./headerItemsData";
@@ -15,7 +20,10 @@ function Employment() {
           title="اطلاعات فردی"
           styles={{ width: "672px", height: "478px" }}
         >
-          <EmploymentForm textFieldItems={personalTextFields} />
+          <EmploymentForm
+            textFieldItems={personalTextFields}
+            footer={<PersonalFooter />}
+          />
         </AuthComponents>
       </Box>
       <Box sx={formContainerStyles}>

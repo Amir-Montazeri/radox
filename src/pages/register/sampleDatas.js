@@ -6,7 +6,7 @@ export const textFieldItems = [
       name: "phone_number",
       placeholder: "تلفن همراه",
       type: "tel",
-      pattern: "09(0[1-2]|1[0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}",
+      pattern: "09(0[0-9]|1[0-9]|3[0-9]|2[0-2])-?[0-9]{3}-?[0-9]{4}",
       required: true,
       icon: usernameIcon,
     },
