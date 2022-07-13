@@ -5,18 +5,18 @@ export const containerStyles = {
     },
   },
   registerContainerStyles = {
-    "> button": {
+    button: {
       height: "100%",
-      color: "#EE5D25",
+      color: "#EE5D25 !important",
     },
   },
   loginContainerStyles = {
-    "> button": {
+    button: {
       height: "100%",
       color: "#fff",
       background: "#EE5D25",
     },
-    "> button:hover": {
+    "button:hover": {
       background: "#EE5D25 !important",
     },
   },

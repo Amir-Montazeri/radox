@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 
 function RegisterTextfieldFooter({ children }) {
   return (
-    <Grid container justifyContent="space-between">
+    <Grid container justifyContent="center">
       {children}
     </Grid>
   );

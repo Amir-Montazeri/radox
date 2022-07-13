@@ -17,13 +17,15 @@ const Login = () => {
 
   const handelSendingCode = (data) => {
     const { phone_number } = data;
+    console.log("submited: ", data);
     setCodeSent(true);
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}`, {
+      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/login/`, {
         phone_number,
       })
       .then((res) => {
-        if (res.code === "1") {
+        console.log(res);
+        if (res.code === 1) {
           setCodeSent(true);
         }
       })
@@ -33,12 +35,12 @@ const Login = () => {
   };
 
   const handleSubmit = (data) => {
-    const { username, phoneNumber } = data;
+    const { otp, phone_number } = data;
     console.log("submited: ", data);
     axios
       .post(`${process.env.REACT_APP_BASE_API_LINK}`, {
-        username,
-        phoneNumber,
+        otp,
+        phone_number,
       })
       .then((res) => {
         console.log("success! ", res);

@@ -1,6 +1,7 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { GiHamburgerMenu } from "react-icons/gi";
 import useWindowSize from "hooks/useWindowSize";
+import { Link } from "react-router-dom";
 import Input from "./Input";
 import {
   containerStyles,
@@ -16,18 +17,30 @@ const RightSection = () => {
   return (
     <Grid container sx={containerStyles}>
       <Grid item sx={registerContainerStyles}>
-        <Button>
-          <Typography variant="body1" component="span" sx={buttonTextContainer}>
-            عضویت
-          </Typography>
-        </Button>
+        <Link to="/auth/register">
+          <Button>
+            <Typography
+              variant="body1"
+              component="span"
+              sx={buttonTextContainer}
+            >
+              عضویت
+            </Typography>
+          </Button>
+        </Link>
       </Grid>
       <Grid item sx={loginContainerStyles}>
-        <Button>
-          <Typography variant="body1" component="span" sx={buttonTextContainer}>
-            ورود کاربر
-          </Typography>
-        </Button>
+        <Link to="/auth/register">
+          <Button>
+            <Typography
+              variant="body1"
+              component="span"
+              sx={buttonTextContainer}
+            >
+              ورود کاربر
+            </Typography>
+          </Button>
+        </Link>
       </Grid>
       <Grid item>{innerWidth >= 730 && <Input />}</Grid>
       <Grid item sx={menuIconContainerStyles}>

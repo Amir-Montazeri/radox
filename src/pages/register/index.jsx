@@ -22,9 +22,8 @@ const Register = () => {
 
   const handelSendingCode = (data) => {
     const { phone_number } = data;
-    setCodeSent(true);
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}`, {
+      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/register/`, {
         phone_number,
       })
       .then((res) => {
@@ -38,11 +37,11 @@ const Register = () => {
   };
 
   const handleSubmit = (data) => {
-    const { username, phoneNumber } = data;
+    const { otp, phone_number } = data;
     axios
       .post(`${process.env.REACT_APP_BASE_API_LINK}`, {
-        username,
-        phoneNumber,
+        otp,
+        phone_number,
         type: selectedType,
       })
       .then((res) => {
