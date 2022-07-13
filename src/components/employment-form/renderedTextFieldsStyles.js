@@ -3,6 +3,9 @@ export const containerStyles = {
     display: "flex",
     alignItems: "center",
     marginBottom: "10px",
+    "@media screen and (max-width: 720px)": {
+      width: "100%",
+    },
   },
   textFieldsStyles = {
     width: "100%",
