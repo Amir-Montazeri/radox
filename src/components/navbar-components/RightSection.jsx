@@ -30,7 +30,7 @@ const RightSection = () => {
         </Link>
       </Grid>
       <Grid item sx={loginContainerStyles}>
-        <Link to="/auth/register">
+        <Link to="/auth/login">
           <Button>
             <Typography
               variant="body1"

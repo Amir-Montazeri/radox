@@ -27,7 +27,9 @@ const Register = () => {
         phone_number,
       })
       .then((res) => {
-        if (res.code === "1") {
+        const { data } = res;
+        if (data.code === "1") {
+          console.log("okeye baba ", data);
           setCodeSent(true);
         }
       })
@@ -45,7 +47,8 @@ const Register = () => {
         type: selectedType,
       })
       .then((res) => {
-        console.log("success! ", res);
+        const { data } = res;
+        console.log("success! ", data);
       })
       .catch((err) => {
         console.log("err! ", err);
