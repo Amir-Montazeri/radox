@@ -1,50 +1,20 @@
 import { Box, Grid } from "@mui/material";
-import {
-  AuthComponents,
-  EmploymentHeader,
-  EmploymentForm,
-  PersonalFooter,
-  OfficeHeader,
-  OfficeFooter,
-} from "components";
-import { headerContainerStyles, formContainerStyles } from "./employmentStyles";
-import { personalTextFields, officeTextFields } from "./formData";
+import { EmploymentHeader } from "components";
+import useWindowSize from "hooks/useWindowSize";
+import { headerContainerStyles } from "./employmentStyles";
 import { usualItems } from "./headerItemsData";
+import LgScreen from "./LgScreen";
+import SmScreen from "./SmScreen";
 
 function Employment() {
+  const { innerWidth } = useWindowSize();
+
   return (
     <Box>
       <Grid container sx={headerContainerStyles}>
         <EmploymentHeader headerItems={usualItems} avatarUrl={""} />
       </Grid>
-      <Box sx={formContainerStyles}>
-        <AuthComponents
-          title="اطلاعات فردی"
-          styles={{ width: "672px", height: "auto", minHeight: "478px" }}
-        >
-          <EmploymentForm
-            textFieldItems={personalTextFields}
-            footer={<PersonalFooter />}
-          />
-        </AuthComponents>
-      </Box>
-      <Box sx={formContainerStyles}>
-        <AuthComponents
-          title="اطلاعات شغلی"
-          styles={{
-            width: "672px",
-            height: "auto",
-            minHeight: "478px",
-            marginBottom: "20px",
-          }}
-        >
-          <EmploymentForm
-            header={<OfficeHeader />}
-            textFieldItems={officeTextFields}
-            footer={<OfficeFooter />}
-          />
-        </AuthComponents>
-      </Box>
+      {innerWidth >= 720 ? <LgScreen /> : <SmScreen />}
     </Box>
   );
 }

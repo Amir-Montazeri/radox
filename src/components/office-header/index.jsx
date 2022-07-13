@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import { containerStyles } from "./officeHeaderStyles";
 import RenderedItems from "./RenderedItems";
 
 const text = [
@@ -24,7 +25,7 @@ const text = [
 
 function OfficeHeader({ data = text }) {
   return (
-    <Grid container justifyContent="space-between">
+    <Grid container sx={containerStyles}>
       <RenderedItems items={data} />
     </Grid>
   );

@@ -7,7 +7,7 @@ import {
 
 const PersonalFooter = () => {
   return (
-    <Grid container alignItems="center" sx={containerStyles}>
+    <Grid container alignItems="center" flexWrap="nowrap" sx={containerStyles}>
       <Grid item>
         <Typography variant="h6" component="p" sx={editTextStyles}>
           ویرایش

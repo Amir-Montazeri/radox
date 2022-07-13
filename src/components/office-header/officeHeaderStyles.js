@@ -1,4 +1,10 @@
-export const itemsContainerStyles = {
+export const containerStyles = {
+    justifyContent: "space-between",
+    "@media screen and (max-width: 695px)": {
+      justifyContent: "center",
+    },
+  },
+  itemsContainerStyles = {
     padding: "15px",
     marginBottom: "10px",
     width: "280px",

@@ -6,7 +6,22 @@ export const containerStyles = {
   contentStyles = {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-end",
+  },
+  contentEnd = {
+    justifyContent: "flex-end",
+  },
+  contentCenter = {
+    justifyContent: "center",
+    "> button": {
+      marginLeft: "5px",
+      cursor: "pointer",
+    },
+  },
+  notActiveTitleStyles = {
+    background: "#969696",
+    ":hover": {
+      background: "#969696",
+    },
   },
   titleContainerStyles = {
     width: "130px",
@@ -16,6 +31,12 @@ export const containerStyles = {
     justifyContent: "center",
     background: "#EE5D25",
     color: "#fff",
+    borderRadius: "4px",
+    borderBottomRightRadius: "0 !important",
+    borderBottomLeftRadius: "0 !important",
+    ":hover": {
+      background: "#EE5D25",
+    },
   },
   formContainerStyles = {
     height: "400px",
