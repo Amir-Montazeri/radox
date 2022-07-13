@@ -35,7 +35,6 @@ const Login = () => {
 
   const handleSubmit = (data) => {
     const { otp, phone_number } = data;
-    console.log("submited: ", data);
     axios
       .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/verify/`, {
         otp,
