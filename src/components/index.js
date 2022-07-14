@@ -11,3 +11,5 @@ export { default as EmploymentForm } from "./employment-form";
 export { default as PersonalFooter } from "./personal-footer";
 export { default as OfficeHeader } from "./office-header";
 export { default as OfficeFooter } from "./office-footer";
+export { default as TypesHeaderComponent } from "./types-header-component";
+export { default as TypesFooterComponent } from "./types-footer-component";
