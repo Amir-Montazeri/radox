@@ -2,6 +2,9 @@ export const containerStyles = {
     "> div": {
       height: "40px !important",
       marginLeft: "10px",
+      "*": {
+        height: "100%",
+      },
     },
   },
   registerContainerStyles = {
