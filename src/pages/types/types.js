@@ -1,9 +1,9 @@
 import cafeIcon from "assets/icons/cafe.svg";
-import cateringIcon from "assets/icons/cafe.svg";
-import confectionaryIcon from "assets/icons/cafe.svg";
-import fastfoodIcon from "assets/icons/cafe.svg";
-import liverIcon from "assets/icons/cafe.svg";
-import restaurantIcon from "assets/icons/cafe.svg";
+import cateringIcon from "assets/icons/catering.svg";
+import confectionaryIcon from "assets/icons/confectionary.svg";
+import fastfoodIcon from "assets/icons/fastfood.svg";
+import liverIcon from "assets/icons/liver.svg";
+import restaurantIcon from "assets/icons/restaurant.svg";
 
 export const itemTypes = [
   {

@@ -3,9 +3,14 @@ export const containerStyles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    background: "#EE5D25",
+    background: "linear-gradient(to bottom, #EE5D25 80%, transparent 20%)",
   },
   titleStyles = {
     margin: "20px 0",
   },
-  itemsContainerStyles = {};
+  itemsContainerStyles = {
+    padding: "0 20px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+  };
