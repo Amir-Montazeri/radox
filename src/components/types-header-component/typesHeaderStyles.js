@@ -5,6 +5,12 @@ export const containerStyles = {
     alignItems: "center",
     background: "linear-gradient(to bottom, #EE5D25 80%, transparent 20%)",
   },
+  contentStyles = {
+    "@media screen and (max-width: 730px)": {
+      flexDirection: "row",
+      justifyContent: "center",
+    },
+  },
   titleStyles = {
     margin: "20px 0",
   },

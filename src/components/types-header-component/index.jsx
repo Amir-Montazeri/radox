@@ -4,12 +4,19 @@ import {
   containerStyles,
   titleStyles,
   itemsContainerStyles,
+  contentStyles,
 } from "./typesHeaderStyles";
 
 const TypesHeaderComponent = ({ types, selected, add, remove }) => {
   const renderedItems = (items) =>
     items?.map(({ items, id }) => (
-      <Grid container flexDirection="column" alignItems="center" key={id}>
+      <Grid
+        container
+        flexDirection="column"
+        alignItems="center"
+        sx={contentStyles}
+        key={id}
+      >
         <RenderedType
           key={id}
           items={items}
