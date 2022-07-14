@@ -35,12 +35,13 @@ const RenderedTextFieldsItems = ({ items, register, onChangedSelected }) => {
           name={inputProps.name}
           selectorItems={inputProps.selectItems}
           selected={selectsSelectedValue}
-          setSelected={(data) =>
+          setSelected={(data) => {
+            console.log({ ...data });
             setSelectsSelectedValue((prevState) => ({
               ...prevState,
               ...data,
-            }))
-          }
+            }));
+          }}
         />
       ),
     };
