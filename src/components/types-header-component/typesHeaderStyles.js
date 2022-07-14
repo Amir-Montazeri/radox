@@ -13,4 +13,7 @@ export const containerStyles = {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
+    "@media screen and (max-width: 730px)": {
+      flexDirection: "column",
+    },
   };

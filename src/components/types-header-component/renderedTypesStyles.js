@@ -7,6 +7,15 @@ export const containerStyles = {
     alignItems: "center",
     bgcolor: "#fff",
     cursor: "pointer",
+    "@media screen and (max-width: 730px)": {
+      height: "105px",
+      width: "202px",
+    },
+    "@media screen and (max-width: 530px)": {
+      height: "85px",
+      width: "160px",
+      fontSize: "1.1rem",
+    },
   },
   selectedStyles = {
     bgcolor: "#FFE8E0",

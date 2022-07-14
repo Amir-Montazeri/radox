@@ -9,7 +9,7 @@ import {
 const TypesHeaderComponent = ({ types, selected, add, remove }) => {
   const renderedItems = (items) =>
     items?.map(({ items, id }) => (
-      <Grid container justifyContent="center" key={id}>
+      <Grid container flexDirection="column" alignItems="center" key={id}>
         <RenderedType
           key={id}
           items={items}
@@ -25,11 +25,7 @@ const TypesHeaderComponent = ({ types, selected, add, remove }) => {
       <Typography variant="h6" color="#fff" sx={titleStyles}>
         گزینه استخدامی مورد نظر را انتخاب کنید
       </Typography>
-      <Grid container>
-        <Grid item sx={itemsContainerStyles}>
-          {renderedItems(types)}
-        </Grid>
-      </Grid>
+      <Box sx={itemsContainerStyles}>{renderedItems(types)}</Box>
     </Box>
   );
 };
