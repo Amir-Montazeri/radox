@@ -8,12 +8,18 @@ import typesBg from "assets/backgrounds/types-bg.svg";
 const Types = () => {
   const [selectedTypes, setSelectedTypes] = useState([]);
 
+  const handelSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Box
       sx={{
         ...containerStyles,
         backgroundImage: `url(${typesBg})`,
       }}
+      component="form"
+      onSubmit={handelSubmit}
     >
       <TypesHeaderComponent
         types={itemTypes}
