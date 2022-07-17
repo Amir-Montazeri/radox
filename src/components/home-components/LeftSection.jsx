@@ -11,11 +11,11 @@ const LeftSection = () => {
     <Grid item sx={containerStyles}>
       <Box>
         <Item title="استخدام" iconAsImg={employment} />
-        <Item title="مواد اولیه" iconAsImg={rawMaterial} />
+        <Item title=" آماده به کار" iconAsImg={rawMaterial} />
       </Box>
       <Box>
-        <Item title="تامین کننده" iconAsImg={supplier} />
-        <Item title="آماده به کار" iconAsImg={readyToWork} />
+        <Item title="بازار مواد اولیه" iconAsImg={supplier} />
+        <Item title="عضویت" iconAsImg={readyToWork} />
       </Box>
     </Grid>
   );

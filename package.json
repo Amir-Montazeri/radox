@@ -1,7 +1,7 @@
 {
   "name": "radox",
   "version": "0.1.0",
-  "homepage": "https://amir-montazeri.github.io",
+  "homepage": "https://amir-montazeri.github.io/radox",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
