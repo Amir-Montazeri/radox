@@ -1,7 +1,15 @@
 import { GlobalStyles, ThemeProvider } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styles from "./globalStyles";
-import { Navbar, Home, Register, Login, Employment, Types } from "pages";
+import {
+  Navbar,
+  Home,
+  Register,
+  Login,
+  Employment,
+  Types,
+  Supplier,
+} from "pages";
 import theme from "theme";
 
 const App = () => {
@@ -19,6 +27,7 @@ const App = () => {
             </Route>
             <Route path="/employment" element={<Employment />} />
             <Route path="/types" element={<Types />} />
+            <Route path="/supplier" element={<Supplier />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Routes>
         </ThemeProvider>

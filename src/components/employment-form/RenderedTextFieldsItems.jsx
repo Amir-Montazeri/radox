@@ -1,5 +1,6 @@
 import { Box, Grid, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
+import TypeTextField from "./FileTextField";
 import {
   containerStyles,
   fullWidthStyles,
@@ -37,6 +38,17 @@ const RenderedTextFieldsItems = ({ items, register, onChangedSelected }) => {
           selected={selectsSelectedValue}
           setSelected={(data) => {
             console.log({ ...data });
+            setSelectsSelectedValue((prevState) => ({
+              ...prevState,
+              ...data,
+            }));
+          }}
+        />
+      ),
+      file: (
+        <TypeTextField
+          name={inputProps.name}
+          setValue={(data) => {
             setSelectsSelectedValue((prevState) => ({
               ...prevState,
               ...data,

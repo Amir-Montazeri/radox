@@ -13,3 +13,4 @@ export { default as OfficeHeader } from "./office-header";
 export { default as OfficeFooter } from "./office-footer";
 export { default as TypesHeaderComponent } from "./types-header-component";
 export { default as TypesFooterComponent } from "./types-footer-component";
+export { default as SupplierHeader } from "./supplier-header";

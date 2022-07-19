@@ -24,7 +24,8 @@ export const containerStyles = {
     },
   },
   titleContainerStyles = {
-    width: "130px",
+    padding: "0 10px",
+    minWidth: "130px",
     height: "47px",
     display: "flex",
     alignItems: "center",
