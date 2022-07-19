@@ -5,6 +5,7 @@ import {
   PersonalFooter,
   OfficeHeader,
   OfficeFooter,
+  EmploymentTable,
 } from "components";
 import { formContainerStyles } from "./employmentStyles";
 import { personalTextFields, officeTextFields } from "./formData";
@@ -33,7 +34,7 @@ const LgScreen = () => {
             marginBottom: "20px",
           }}
         >
-          <EmploymentForm
+          <EmploymentTable
             header={<OfficeHeader />}
             textFieldItems={officeTextFields}
             footer={<OfficeFooter />}

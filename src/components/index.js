@@ -8,6 +8,7 @@ export { default as RegisterTextfieldFooter } from "./register-textfield-footer"
 export { default as RegisterFooter } from "./register-footer";
 export { default as EmploymentHeader } from "./employment-header";
 export { default as EmploymentForm } from "./employment-form";
+export { default as EmploymentTable } from "./employment-table";
 export { default as PersonalFooter } from "./personal-footer";
 export { default as OfficeHeader } from "./office-header";
 export { default as OfficeFooter } from "./office-footer";
