@@ -9,6 +9,7 @@ import {
 import { Home } from "pages";
 import TextFieldsFooter from "./TextFieldsFooter";
 import { buttonItems, renderOnCodeSent, textFieldItems } from "./sampleDatas";
+import { setItem } from "lcoalStorage";
 
 const Register = () => {
   const [codeSent, setCodeSent] = useState(false),
@@ -47,6 +48,9 @@ const Register = () => {
       })
       .then((res) => {
         const { data } = res;
+
+        setItem("access", data.access);
+        setItem("refresh", data.refresh);
         console.log("success! ", data);
       })
       .catch((err) => {

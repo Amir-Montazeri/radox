@@ -53,7 +53,7 @@ const EmploymentTable = ({ header, textFieldItems, footer }) => {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>گروه شغلی</TableCell>
+                <TableCell align="right">گروه شغلی</TableCell>
                 <TableCell align="right">مجموعه</TableCell>
                 <TableCell align="right">مدت همکاری</TableCell>
                 <TableCell align="right">سمت</TableCell>
@@ -67,7 +67,7 @@ const EmploymentTable = ({ header, textFieldItems, footer }) => {
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
+                  <TableCell component="th" scope="row" align="right">
                     {row.name}
                   </TableCell>
                   <TableCell align="right">{row.calories}</TableCell>

@@ -4,6 +4,7 @@ import { AuthComponents, AuthForm, RegisterTextfieldFooter } from "components";
 import { Home } from "pages";
 import Footer from "./Footer";
 import { textFieldItems, renderOnCodeSent, buttonItems } from "./sampleDatas";
+import { setItem } from "lcoalStorage";
 
 const Login = () => {
   const [codeSent, setCodeSent] = useState(false);
@@ -42,6 +43,10 @@ const Login = () => {
         phone_number,
       })
       .then((res) => {
+        const { data } = res;
+
+        setItem("access", data.access);
+        setItem("refresh", data.refresh);
         console.log("success! ", res);
       })
       .catch((err) => {

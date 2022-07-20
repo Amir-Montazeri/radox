@@ -9,7 +9,12 @@ const LeftSection = () => {
   return (
     <div>
       <Link to="/">
-        <img src={innerWidth >= 550 ? logo : resLogo} alt="logo" />
+        <img
+          src={innerWidth >= 829 ? logo : resLogo}
+          alt="logo"
+          // height="100px"
+          style={{ zIndex: 1000 }}
+        />
       </Link>
     </div>
   );
