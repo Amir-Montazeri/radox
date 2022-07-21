@@ -9,6 +9,7 @@ import {
   Employment,
   Types,
   Supplier,
+  SearchItem,
 } from "pages";
 import theme from "theme";
 
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/employment" element={<Employment />} />
             <Route path="/types" element={<Types />} />
             <Route path="/supplier" element={<Supplier />} />
+            <Route path="/search-item" element={<SearchItem />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Routes>
         </ThemeProvider>

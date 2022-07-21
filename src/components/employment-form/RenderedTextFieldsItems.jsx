@@ -9,7 +9,15 @@ import {
 } from "./renderedTextFieldsStyles";
 import SelectTextField from "./SelectTextField";
 
-const RenderedTextFieldsItems = ({ items, register, onChangedSelected }) => {
+const selectItems = [];
+
+const RenderedTextFieldsItems = ({
+  items,
+  register,
+  extraStyles = {},
+  onChangedSelected,
+}) => {
+  const [selectedValue, setSelectedValue] = useState(selectItems[0].value);
   const [selectsSelectedValue, setSelectsSelectedValue] = useState({});
   const fullWidth = items.length === 1 ? fullWidthStyles : "";
 
@@ -70,7 +78,11 @@ const RenderedTextFieldsItems = ({ items, register, onChangedSelected }) => {
 
   return items?.map(({ inputProps, icon, id }) => {
     return (
-      <Grid item key={id} sx={{ ...containerStyles, ...fullWidth }}>
+      <Grid
+        item
+        key={id}
+        sx={{ ...containerStyles, ...fullWidth, ...extraStyles }}
+      >
         {inputTypes(inputProps?.type, inputProps) || defaultInput(inputProps)}
         {icon && (
           <Box sx={iconContainerStyles}>

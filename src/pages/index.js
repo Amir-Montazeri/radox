@@ -5,3 +5,4 @@ export { default as Login } from "./login";
 export { default as Employment } from "./employment";
 export { default as Types } from "./types";
 export { default as Supplier } from "./supplier";
+export { default as SearchItem } from "./search-item";

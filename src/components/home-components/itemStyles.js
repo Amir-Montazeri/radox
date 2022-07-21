@@ -3,6 +3,7 @@ export const containerStyles = {
     width: "261px",
     height: "121px",
     background: "#fff",
+    borderTopLeftRadius: "19px",
     cursor: "pointer",
     "@media screen and (max-width: 730px)": {
       width: "220px",
