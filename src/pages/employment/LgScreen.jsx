@@ -8,9 +8,10 @@ import {
   EmploymentTable,
 } from "components";
 import { formContainerStyles } from "./employmentStyles";
-import { personalTextFields, officeTextFields } from "./formData";
+import { officeTextFields } from "./formData";
 
-const LgScreen = () => {
+const LgScreen = ({ personalTextFields }) => {
+  // console.log("personalTextFields: ", personalTextFields);
   return (
     <>
       <Box sx={formContainerStyles}>

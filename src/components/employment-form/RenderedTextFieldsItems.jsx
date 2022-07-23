@@ -15,27 +15,28 @@ const RenderedTextFieldsItems = ({
   items,
   register,
   extraStyles = {},
-  onChangedSelected,
+  selectsSelectedValue,
+  setSelectsSelectedValue,
 }) => {
-  const [selectedValue, setSelectedValue] = useState(selectItems[0].value);
-  const [selectsSelectedValue, setSelectsSelectedValue] = useState({});
+  // const [selectedValue, setSelectedValue] = useState(selectItems[0].value);
+  // const [selectsSelectedValue, setSelectsSelectedValue] = useState({});
   const fullWidth = items.length === 1 ? fullWidthStyles : "";
 
   useEffect(() => {
+    let defaultStateValue = {};
     for (const i in items) {
       const { type, name, selectItems } = items[i].inputProps;
       if (type === "select") {
-        setSelectsSelectedValue((prevState) => ({
-          ...prevState,
-          [name]: selectItems[0].value,
-        }));
+        defaultStateValue = { ...defaultStateValue, [name]: selectItems[0].id };
       }
     }
+    console.log("defaultStateValue: ", defaultStateValue);
+    setSelectsSelectedValue(defaultStateValue);
   }, []);
 
-  useEffect(() => {
-    onChangedSelected(selectsSelectedValue);
-  }, [selectsSelectedValue]);
+  // useEffect(() => {
+  //   onChangedSelected(selectsSelectedValue);
+  // }, [selectsSelectedValue]);
 
   const inputTypes = (type, inputProps) => {
     const types = {

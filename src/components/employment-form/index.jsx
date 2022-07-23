@@ -8,14 +8,18 @@ const EmploymentForm = ({ header, textFieldItems, footer }) => {
   const [selectingValue, setSelectingsValue] = useState({});
   const { register, handleSubmit } = useForm();
 
-  const renderedTextFields = (items) =>
-    items?.map(({ items, id }) => {
+  const renderedTextFields = (fields) =>
+    fields?.map((item) => {
+      const { items, id } = item[0];
       return (
         <Grid container key={id} sx={textFeildsContainerStyles}>
           <RenderedTextFieldsItems
             items={items}
             register={register}
-            onChangedSelected={(data) => setSelectingsValue(data)}
+            selectsSelectedValue={selectingValue}
+            setSelectsSelectedValue={(data) =>
+              setSelectingsValue((prevState) => ({ ...prevState, ...data }))
+            }
           />
         </Grid>
       );

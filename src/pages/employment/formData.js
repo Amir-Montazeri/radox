@@ -6,7 +6,7 @@ import nationalityIcon from "assets/icons/nationality.svg";
 import genderIcon from "assets/icons/gender.svg";
 import addressIcon from "assets/icons/address.svg";
 
-export const personalTextFields = [
+export const personalTextFields01 = [
     {
       items: [
         {
@@ -20,7 +20,7 @@ export const personalTextFields = [
         },
         {
           inputProps: {
-            name: "fullname",
+            name: "name",
             placeholder: "نام مجموعه/نام و نام خانوادگی",
             type: "text",
           },
@@ -30,11 +30,13 @@ export const personalTextFields = [
       ],
       id: 0,
     },
+  ],
+  personalTextFields02 = [
     {
       items: [
         {
           inputProps: {
-            name: "birth",
+            name: "brith_day",
             placeholder: "تاریخ تولد",
             type: "date",
           },
@@ -43,33 +45,33 @@ export const personalTextFields = [
         },
         {
           inputProps: {
-            name: "degree",
+            name: "degree_of_education",
             placeholder: "مدرک تحصیلی",
             type: "select",
             selectItems: [
               {
                 title: "سیکل",
-                value: "cycle",
+                id: "cycle",
               },
               {
                 title: "دیپلم",
-                value: "diploma",
+                id: "diploma",
               },
               {
                 title: "کاردانی",
-                value: "Associate ",
+                id: "Associate ",
               },
               {
                 title: "کارشناسی",
-                value: "Bachelor",
+                id: "Bachelor",
               },
               {
                 title: "ارشد",
-                value: "Master",
+                id: "Master",
               },
               {
                 title: "سایر",
-                value: "other",
+                id: "other",
               },
             ],
           },
@@ -79,27 +81,10 @@ export const personalTextFields = [
       ],
       id: 1,
     },
+  ],
+  personalTextFields03 = [
     {
       items: [
-        {
-          inputProps: {
-            name: "city",
-            placeholder: "استان",
-            type: "select",
-            selectItems: [
-              {
-                title: "البرز",
-                value: "al",
-              },
-              {
-                title: "تهران",
-                value: "teh",
-              },
-            ],
-          },
-          icon: nationalityIcon,
-          id: 4,
-        },
         {
           inputProps: {
             name: "state",
@@ -107,36 +92,47 @@ export const personalTextFields = [
             type: "select",
             selectItems: [
               {
-                title: "کرج",
-                value: "krj",
-              },
-              {
-                title: "فردیس",
-                value: "far",
+                title: "loading...",
               },
             ],
           },
           icon: genderIcon,
           id: 5,
         },
+        {
+          inputProps: {
+            name: "city",
+            placeholder: "استان",
+            type: "select",
+            selectItems: [
+              {
+                title: "loading...",
+              },
+            ],
+          },
+          icon: nationalityIcon,
+          id: 4,
+        },
       ],
       id: 2,
     },
+  ],
+  personalTextFields04 = [
     {
       items: [
         {
           inputProps: {
-            name: "country",
+            name: "nationality",
             placeholder: "ملیت",
             type: "select",
             selectItems: [
               {
                 title: "ایران",
-                value: "ir",
+                id: "ir",
               },
               {
                 title: "افغان",
-                value: "afg",
+                id: "afg",
               },
             ],
           },
@@ -151,11 +147,11 @@ export const personalTextFields = [
             selectItems: [
               {
                 title: "مذکر",
-                value: "male",
+                id: "male",
               },
               {
                 title: "مونث",
-                value: "female",
+                id: "female",
               },
             ],
           },
@@ -165,6 +161,8 @@ export const personalTextFields = [
       ],
       id: 3,
     },
+  ],
+  personalTextFields05 = [
     {
       items: [
         {
@@ -179,6 +177,8 @@ export const personalTextFields = [
       ],
       id: 4,
     },
+  ],
+  personalTextFields06 = [
     {
       items: [
         {
@@ -193,113 +193,114 @@ export const personalTextFields = [
       ],
       id: 5,
     },
-  ],
-  officeTextFields = [
-    {
-      items: [
-        {
-          inputProps: {
-            name: "workType",
-            placeholder: "گروه شغلی",
-            type: "select",
-            selectItems: [
-              {
-                title: "سیکل",
-                value: "cycle",
-              },
-              {
-                title: "دیپلم",
-                value: "diploma",
-              },
-              {
-                title: "کاردانی",
-                value: "Associate ",
-              },
-              {
-                title: "کارشناسی",
-                value: "Bachelor",
-              },
-              {
-                title: "ارشد",
-                value: "Master",
-              },
-              {
-                title: "سایر",
-                value: "other",
-              },
-            ],
-          },
-          id: 0,
-        },
-        {
-          inputProps: {
-            name: "companyName",
-            placeholder: "نام مجموعه/شرکت",
-            type: "text",
-          },
-          id: 1,
-        },
-      ],
-      id: 0,
-    },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "position",
-            placeholder: "سمت",
-            type: "text",
-          },
-          id: 2,
-        },
-        {
-          inputProps: {
-            name: "colPeriod",
-            placeholder: "مدت همکاری",
-            type: "text",
-          },
-          id: 3,
-        },
-      ],
-      id: 1,
-    },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "type",
-            placeholder: "نوع همکاری",
-            type: "select",
-            selectItems: [
-              {
-                title: "",
-              },
-            ],
-          },
-          id: 4,
-        },
-        {
-          inputProps: {
-            name: "cost",
-            placeholder: "میزان حقوق دریافتی",
-            type: "text",
-          },
-          id: 5,
-        },
-      ],
-      id: 2,
-    },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "desc",
-            placeholder: "توضیحات تکمیلی",
-            type: "text",
-          },
-          id: 6,
-        },
-      ],
-      id: 3,
-    },
   ];
+
+export const officeTextFields = [
+  {
+    items: [
+      {
+        inputProps: {
+          name: "workType",
+          placeholder: "گروه شغلی",
+          type: "select",
+          selectItems: [
+            {
+              title: "سیکل",
+              value: "cycle",
+            },
+            {
+              title: "دیپلم",
+              value: "diploma",
+            },
+            {
+              title: "کاردانی",
+              value: "Associate ",
+            },
+            {
+              title: "کارشناسی",
+              value: "Bachelor",
+            },
+            {
+              title: "ارشد",
+              value: "Master",
+            },
+            {
+              title: "سایر",
+              value: "other",
+            },
+          ],
+        },
+        id: 0,
+      },
+      {
+        inputProps: {
+          name: "companyName",
+          placeholder: "نام مجموعه/شرکت",
+          type: "text",
+        },
+        id: 1,
+      },
+    ],
+    id: 0,
+  },
+  {
+    items: [
+      {
+        inputProps: {
+          name: "position",
+          placeholder: "سمت",
+          type: "text",
+        },
+        id: 2,
+      },
+      {
+        inputProps: {
+          name: "colPeriod",
+          placeholder: "مدت همکاری",
+          type: "text",
+        },
+        id: 3,
+      },
+    ],
+    id: 1,
+  },
+  {
+    items: [
+      {
+        inputProps: {
+          name: "type",
+          placeholder: "نوع همکاری",
+          type: "select",
+          selectItems: [
+            {
+              title: "",
+            },
+          ],
+        },
+        id: 4,
+      },
+      {
+        inputProps: {
+          name: "cost",
+          placeholder: "میزان حقوق دریافتی",
+          type: "text",
+        },
+        id: 5,
+      },
+    ],
+    id: 2,
+  },
+  {
+    items: [
+      {
+        inputProps: {
+          name: "desc",
+          placeholder: "توضیحات تکمیلی",
+          type: "text",
+        },
+        id: 6,
+      },
+    ],
+    id: 3,
+  },
+];
