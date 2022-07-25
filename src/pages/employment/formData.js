@@ -36,7 +36,7 @@ export const personalTextFields01 = [
       items: [
         {
           inputProps: {
-            name: "brith_day",
+            name: "birth_day",
             placeholder: "تاریخ تولد",
             type: "date",
           },
@@ -147,11 +147,11 @@ export const personalTextFields01 = [
             selectItems: [
               {
                 title: "مذکر",
-                id: "male",
+                id: "men",
               },
               {
                 title: "مونث",
-                id: "female",
+                id: "women",
               },
             ],
           },

@@ -10,7 +10,11 @@ import {
 import { formContainerStyles } from "./employmentStyles";
 import { officeTextFields } from "./formData";
 
-const LgScreen = ({ personalTextFields }) => {
+const LgScreen = ({
+  personalTextFields,
+  selectingValue,
+  setSelectingsValue,
+}) => {
   // console.log("personalTextFields: ", personalTextFields);
   return (
     <>
@@ -21,6 +25,8 @@ const LgScreen = ({ personalTextFields }) => {
         >
           <EmploymentForm
             textFieldItems={personalTextFields}
+            selectingValue={selectingValue}
+            setSelectingsValue={setSelectingsValue}
             footer={<PersonalFooter />}
           />
         </AuthComponents>

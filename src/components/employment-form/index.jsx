@@ -1,13 +1,19 @@
 import { Grid } from "@mui/material";
-import { useState } from "react";
+import axios from "axios";
+import { getItem } from "lcoalStorage";
 import { useForm } from "react-hook-form";
 import { textFeildsContainerStyles } from "./employmentFormStyles";
 import RenderedTextFieldsItems from "./RenderedTextFieldsItems";
 
-const EmploymentForm = ({ header, textFieldItems, footer }) => {
-  const [selectingValue, setSelectingsValue] = useState({});
+const EmploymentForm = ({
+  header,
+  selectingValue,
+  setSelectingsValue,
+  textFieldItems,
+  footer,
+}) => {
+  // const [selectingValue, setSelectingsValue] = useState({});
   const { register, handleSubmit } = useForm();
-
   const renderedTextFields = (fields) =>
     fields?.map((item) => {
       const { items, id } = item[0];
@@ -17,16 +23,35 @@ const EmploymentForm = ({ header, textFieldItems, footer }) => {
             items={items}
             register={register}
             selectsSelectedValue={selectingValue}
-            setSelectsSelectedValue={(data) =>
-              setSelectingsValue((prevState) => ({ ...prevState, ...data }))
-            }
+            setSelectsSelectedValue={(data) => {
+              setSelectingsValue({ ...selectingValue, ...data });
+            }}
           />
         </Grid>
       );
     });
 
   const onFormSubmited = (e) => {
-    console.log({ ...e, ...selectingValue });
+    const access = getItem("access");
+    axios
+      .post(
+        `${process.env.REACT_APP_BASE_API_LINK}accounts/work/info/`,
+        {
+          ...selectingValue,
+          ...e,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${access}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log("suc: ", res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

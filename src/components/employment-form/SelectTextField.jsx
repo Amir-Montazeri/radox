@@ -2,16 +2,17 @@ import { TextField, MenuItem } from "@mui/material";
 import { textFieldsStyles } from "./renderedTextFieldsStyles";
 
 const SelectTextField = ({ name, selectorItems, selected, setSelected }) => {
+  // name === "city" && console.log(selectorItems);
+
   const handelChange = (e) => {
-    setSelected({ [name]: e.target.id });
+    console.log({ [name]: e.target.value.toString() });
+    setSelected({ [name]: e.target.value });
   };
-  // console.log("selected state: ", selected);
   const renderedSelection = (items) =>
-    items.map(({ id, title, name }) => {
-      // console.log(title, ": ", id);
+    items.map(({ id, title }) => {
       return (
-        <MenuItem key={id} value={id}>
-          {title || name}
+        <MenuItem key={id || title} value={id}>
+          {title}
         </MenuItem>
       );
     });

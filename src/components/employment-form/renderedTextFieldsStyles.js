@@ -16,10 +16,13 @@ export const containerStyles = {
       {
         height: "100%",
         color: "#4a4a4a",
-        bgcolor: "#F2F2F2",
+        bgcolor: "#F2F2F2 !important",
       },
     "fieldset.css-1d3z3hw-MuiOutlinedInput-notchedOutline": {
       borderColor: "#F2F2F2 !important",
+    },
+    "*:-internal-autofill-selected ": {
+      bgcolor: "red !important",
     },
   },
   fullWidthStyles = {

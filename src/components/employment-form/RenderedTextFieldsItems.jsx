@@ -1,5 +1,5 @@
 import { Box, Grid, TextField } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import TypeTextField from "./FileTextField";
 import {
   containerStyles,
@@ -30,13 +30,10 @@ const RenderedTextFieldsItems = ({
         defaultStateValue = { ...defaultStateValue, [name]: selectItems[0].id };
       }
     }
-    console.log("defaultStateValue: ", defaultStateValue);
+    // console.log("defaultStateValue: ", defaultStateValue);
     setSelectsSelectedValue(defaultStateValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // useEffect(() => {
-  //   onChangedSelected(selectsSelectedValue);
-  // }, [selectsSelectedValue]);
 
   const inputTypes = (type, inputProps) => {
     const types = {
@@ -46,11 +43,7 @@ const RenderedTextFieldsItems = ({
           selectorItems={inputProps.selectItems}
           selected={selectsSelectedValue}
           setSelected={(data) => {
-            console.log({ ...data });
-            setSelectsSelectedValue((prevState) => ({
-              ...prevState,
-              ...data,
-            }));
+            setSelectsSelectedValue(data);
           }}
         />
       ),
@@ -69,13 +62,17 @@ const RenderedTextFieldsItems = ({
     return types[type];
   };
 
-  const defaultInput = (inputProps) => (
-    <TextField
-      {...inputProps}
-      {...register(inputProps.name)}
-      sx={{ ...textFieldsStyles, ...fullWidth }}
-    />
-  );
+  const defaultInput = (inputProps) => {
+    // console.log("inputProps: ", inputProps);
+    return (
+      <TextField
+        {...inputProps}
+        defaultValue={selectsSelectedValue[inputProps.name]}
+        {...register(inputProps.name)}
+        sx={{ ...textFieldsStyles, ...fullWidth }}
+      />
+    );
+  };
 
   return items?.map(({ inputProps, icon, id }) => {
     return (
