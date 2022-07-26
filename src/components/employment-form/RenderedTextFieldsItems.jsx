@@ -27,7 +27,6 @@ const RenderedTextFieldsItems = ({
 }) => {
   // const [selectedValue, setSelectedValue] = useState(selectItems[0].value);
   // const [selectsSelectedValue, setSelectsSelectedValue] = useState({});
-  const [selectedDate, handleDateChange] = useState(moment());
   const fullWidth = items.length === 1 ? fullWidthStyles : "";
 
   useEffect(() => {
@@ -69,34 +68,33 @@ const RenderedTextFieldsItems = ({
         <LocalizationProvider dateAdapter={AdapterJalali}>
           <DatePicker
             mask="____/__/__"
-            value={selectedDate}
-            onChange={(newValue) => handleDateChange(newValue)}
-            renderInput={(params) => <TextField {...params} />}
+            value={selectsSelectedValue["birth_day"]}
+            onChange={(newValue) =>
+              setSelectsSelectedValue({ birth_day: newValue })
+            }
+            renderInput={(params) => (
+              <TextField
+                sx={{
+                  ...textFieldsStyles,
+                  ...fullWidth,
+                  height: "100%",
+                  bgcolor: "#F2F2F2!important",
+                  fieldset: {
+                    // bgcolor: "#F2F2F2!important",
+                  },
+                }}
+                {...params}
+              />
+            )}
           />
         </LocalizationProvider>
-        // <LocalizationProvider dateAdapter={AdapterJalali} locale="fa">
-        //   <DatePicker
-        //     mask="____/__/__"
-        //     // labelFunc={(date) => (date ? date.format("jYYYY/jMM/jd") : "")}
-        //     renderInput={(params) => (
-        //       <TextField
-        //         sx={{
-        //           ...textFieldsStyles,
-        //           ...fullWidth,
-        //           bgcolor: "#F2F2F2!important",
-        //         }}
-        //         {...params}
-        //       />
-        //     )}
-        //     value={selectedDate}
-        //     onChange={handleDateChange}
-        //   />
-        // </LocalizationProvider>
       ),
     };
     return types[type];
   };
-  console.log(selectedDate);
+
+  console.log("selectsSelectedValue", selectsSelectedValue);
+
   const defaultInput = (inputProps) => {
     return (
       <TextField
