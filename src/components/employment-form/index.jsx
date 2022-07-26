@@ -10,12 +10,14 @@ const EmploymentForm = ({
   selectingValue,
   setSelectingsValue,
   textFieldItems,
+  apiPath = "accounts/work/info/",
   footer,
 }) => {
   // const [selectingValue, setSelectingsValue] = useState({});
   const { register, handleSubmit } = useForm();
   const renderedTextFields = (fields) =>
     fields?.map((item) => {
+      console.log("bug from here!");
       const { items, id } = item[0];
       return (
         <Grid container key={id} sx={textFeildsContainerStyles}>
@@ -35,7 +37,7 @@ const EmploymentForm = ({
     const access = getItem("access");
     axios
       .post(
-        `${process.env.REACT_APP_BASE_API_LINK}accounts/work/info/`,
+        "http://45.149.79.206:8000/api/v1/" + apiPath,
         {
           ...selectingValue,
           ...e,

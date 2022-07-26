@@ -6,7 +6,7 @@ import nationalityIcon from "assets/icons/nationality.svg";
 import genderIcon from "assets/icons/gender.svg";
 import addressIcon from "assets/icons/address.svg";
 
-export const personalTextFields = [
+export const personalTextFields01 = [
     {
       items: [
         {
@@ -20,7 +20,7 @@ export const personalTextFields = [
         },
         {
           inputProps: {
-            name: "fullname",
+            name: "name",
             placeholder: "نام مجموعه/نام و نام خانوادگی",
             type: "text",
           },
@@ -30,39 +30,8 @@ export const personalTextFields = [
       ],
       id: 0,
     },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "state",
-            placeholder: "استان",
-            type: "select",
-            selectItems: [
-              {
-                title: "البرز",
-                value: "al",
-              },
-              {
-                title: "تهران",
-                value: "teh",
-              },
-            ],
-          },
-          icon: birthIcon,
-          id: 2,
-        },
-        {
-          inputProps: {
-            name: "landline",
-            placeholder: "تلفن ثابت",
-            type: "tel",
-          },
-          icon: degreeIcon,
-          id: 3,
-        },
-      ],
-      id: 1,
-    },
+  ],
+  personalTextFields02 = [
     {
       items: [
         {
@@ -71,9 +40,25 @@ export const personalTextFields = [
             placeholder: "ایمیل",
             type: "email",
           },
-          icon: nationalityIcon,
-          id: 4,
+          icon: birthIcon,
+          id: 2,
         },
+        {
+          inputProps: {
+            name: "home_number",
+            placeholder: "شماره ثابت",
+            type: "tel",
+          },
+          icon: degreeIcon,
+          id: 3,
+        },
+      ],
+      id: 1,
+    },
+  ],
+  personalTextFields03 = [
+    {
+      items: [
         {
           inputProps: {
             name: "state",
@@ -81,21 +66,32 @@ export const personalTextFields = [
             type: "select",
             selectItems: [
               {
-                title: "کرج",
-                value: "krj",
-              },
-              {
-                title: "فردیس",
-                value: "far",
+                title: "loading...",
               },
             ],
           },
           icon: genderIcon,
           id: 5,
         },
+        {
+          inputProps: {
+            name: "city",
+            placeholder: "استان",
+            type: "select",
+            selectItems: [
+              {
+                title: "loading...",
+              },
+            ],
+          },
+          icon: nationalityIcon,
+          id: 4,
+        },
       ],
       id: 2,
     },
+  ],
+  personalTextFields04 = [
     {
       items: [
         {
@@ -110,84 +106,85 @@ export const personalTextFields = [
       ],
       id: 3,
     },
-  ],
-  officeTextFields = [
-    {
-      items: [
-        {
-          inputProps: {
-            name: "price",
-            placeholder: "قیمت محصول",
-            type: "number",
-          },
-          id: 0,
-        },
-        {
-          inputProps: {
-            name: "item_name",
-            placeholder: "نام محصول",
-            type: "text",
-          },
-          id: 1,
-        },
-      ],
-      id: 0,
-    },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "send_type",
-            placeholder: "شهر",
-            type: "select",
-            selectItems: [
-              {
-                title: "هزینه دار",
-                value: "cost",
-              },
-              {
-                title: "رایگان",
-                value: "free",
-              },
-            ],
-          },
-          id: 2,
-        },
-        {
-          inputProps: {
-            name: "product_unit",
-            placeholder: "واحد حصول",
-            type: "text",
-          },
-          id: 3,
-        },
-      ],
-      id: 1,
-    },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "pic",
-            placeholder: "تصویر محصول",
-            type: "file",
-          },
-          id: 4,
-        },
-      ],
-      id: 2,
-    },
-    {
-      items: [
-        {
-          inputProps: {
-            name: "desc",
-            placeholder: "توضیحات تکمیلی",
-            type: "text",
-          },
-          id: 6,
-        },
-      ],
-      id: 3,
-    },
   ];
+
+export const officeTextFields = [
+  {
+    items: [
+      {
+        inputProps: {
+          name: "price",
+          placeholder: "قیمت محصول",
+          type: "number",
+        },
+        id: 0,
+      },
+      {
+        inputProps: {
+          name: "item_name",
+          placeholder: "نام محصول",
+          type: "text",
+        },
+        id: 1,
+      },
+    ],
+    id: 0,
+  },
+  {
+    items: [
+      {
+        inputProps: {
+          name: "send_type",
+          placeholder: "شهر",
+          type: "select",
+          selectItems: [
+            {
+              title: "هزینه دار",
+              value: "cost",
+            },
+            {
+              title: "رایگان",
+              value: "free",
+            },
+          ],
+        },
+        id: 2,
+      },
+      {
+        inputProps: {
+          name: "product_unit",
+          placeholder: "واحد حصول",
+          type: "text",
+        },
+        id: 3,
+      },
+    ],
+    id: 1,
+  },
+  {
+    items: [
+      {
+        inputProps: {
+          name: "pic",
+          placeholder: "تصویر محصول",
+          type: "file",
+        },
+        id: 4,
+      },
+    ],
+    id: 2,
+  },
+  {
+    items: [
+      {
+        inputProps: {
+          name: "desc",
+          placeholder: "توضیحات تکمیلی",
+          type: "text",
+        },
+        id: 6,
+      },
+    ],
+    id: 3,
+  },
+];

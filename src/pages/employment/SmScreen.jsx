@@ -1,10 +1,21 @@
 import { useState } from "react";
 import { Box } from "@mui/material";
-import { AuthComponents, EmploymentForm } from "components";
+import {
+  AuthComponents,
+  EmploymentForm,
+  EmploymentTable,
+  OfficeFooter,
+} from "components";
 import { formContainerStyles } from "./employmentStyles";
-import { titles, sectionsBasedOnTitle } from "./titlesData";
+import { titles } from "./titlesData";
+import { PersonalFooter } from "components";
+import { officeTextFields } from "./formData";
 
-const SmScreen = () => {
+const SmScreen = ({
+  personalTextFields,
+  selectingValue,
+  setSelectingsValue,
+}) => {
   const [selectedPage, setSelectedPage] = useState(titles[0].value);
 
   return (
@@ -20,11 +31,19 @@ const SmScreen = () => {
           minHeight: "478px",
         }}
       >
-        <EmploymentForm
-          header={sectionsBasedOnTitle[selectedPage].header || null}
-          textFieldItems={sectionsBasedOnTitle[selectedPage].textFieldItems}
-          footer={sectionsBasedOnTitle[selectedPage].footer}
-        />
+        {selectedPage === "personal" ? (
+          <EmploymentForm
+            textFieldItems={personalTextFields}
+            selectingValue={selectingValue}
+            setSelectingsValue={setSelectingsValue}
+            footer={<PersonalFooter />}
+          />
+        ) : (
+          <EmploymentTable
+            textFieldItems={officeTextFields}
+            footer={<OfficeFooter />}
+          />
+        )}
       </AuthComponents>
     </Box>
   );

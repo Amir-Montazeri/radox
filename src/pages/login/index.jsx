@@ -19,11 +19,10 @@ const Login = () => {
   const handelSendingCode = (data) => {
     const { phone_number } = data;
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/login/`, {
+      .post(`http://45.149.79.206:8000/api/v1/accounts/login/`, {
         phone_number,
       })
       .then((res) => {
-        console.log(res);
         const { data } = res;
         if (data.code === 1) {
           setCodeSent(true);
@@ -38,7 +37,7 @@ const Login = () => {
   const handleSubmit = (data) => {
     const { otp, phone_number } = data;
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/verify/`, {
+      .post(`http://45.149.79.206:8000/api/v1/accounts/verify/`, {
         otp,
         phone_number,
       })
@@ -47,7 +46,6 @@ const Login = () => {
 
         setItem("access", data.access);
         setItem("refresh", data.refresh);
-        console.log("success! ", res);
       })
       .catch((err) => {
         console.log("err! ", err);

@@ -7,7 +7,7 @@ import useWindowSize from "hooks/useWindowSize";
 import { headerContainerStyles } from "./employmentStyles";
 import { usualItems } from "./headerItemsData";
 import LgScreen from "./LgScreen";
-// import SmScreen from "./SmScreen";
+import SmScreen from "./SmScreen";
 import genderIcon from "assets/icons/gender.svg";
 import nationalityIcon from "assets/icons/nationality.svg";
 import {
@@ -36,8 +36,6 @@ function Employment() {
       personalTextFields05,
       personalTextFields06,
     });
-
-  console.log("selectingValue", selectingValue);
 
   const updateCityAndState = (type, data) => {
     switch (type) {
@@ -92,14 +90,13 @@ function Employment() {
     const access = getItem("access");
     isLoading &&
       axios
-        .get(`${process.env.REACT_APP_BASE_API_LINK}accounts/work/info/`, {
+        .get(`http://45.149.79.206:8000/api/v1/accounts/work/info/`, {
           headers: {
             Authorization: `Bearer ${access}`,
           },
         })
         .then((res) => {
           if (res.data.code === 1) {
-            console.log("mmd: ", res.data.data);
             setIsLoading(false);
             setSelectingsValue(res.data.data);
           } else if (res.data.code === -1) {
@@ -113,11 +110,10 @@ function Employment() {
             removeItem("refresh");
             navigate("/auth/login");
           }
-          console.log("err: ", response);
         });
 
     axios
-      .get(`${process.env.REACT_APP_BASE_API_LINK}locations/state/`)
+      .get(`http://45.149.79.206:8000/api/v1/locations/state/`)
       .then((res) => {
         const { data } = res;
         updateCityAndState("state", data);
@@ -132,11 +128,10 @@ function Employment() {
       } else {
         axios
           .get(
-            `${process.env.REACT_APP_BASE_API_LINK}locations/state/${selectingValue.state}/`
+            `http://45.149.79.206:8000/api/v1/locations/state/${selectingValue.state}/`
           )
           .then((res) => {
             const { data } = res;
-            console.log(data);
             updateCityAndState("city", data.citys);
           });
       }
@@ -145,7 +140,6 @@ function Employment() {
   }, [selectingValue.state]);
 
   const handleValueChanged = (data) => {
-    console.log("data: ", data);
     setSelectingsValue(data);
   };
 
@@ -162,8 +156,11 @@ function Employment() {
             personalTextFields={Object.values(debouncedPersonalTextFields)}
           />
         ) : (
-          // <SmScreen />
-          <div>not</div>
+          <SmScreen
+            selectingValue={selectingValue}
+            setSelectingsValue={handleValueChanged}
+            personalTextFields={Object.values(debouncedPersonalTextFields)}
+          />
         )}
       </Box>
     )

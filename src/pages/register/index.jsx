@@ -24,7 +24,7 @@ const Register = () => {
   const handelSendingCode = (data) => {
     const { phone_number } = data;
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/register/`, {
+      .post(`http://45.149.79.206:8000/api/v1/accounts/register/`, {
         phone_number,
       })
       .then((res) => {
@@ -41,7 +41,7 @@ const Register = () => {
   const handleSubmit = (data) => {
     const { otp, phone_number } = data;
     axios
-      .post(`${process.env.REACT_APP_BASE_API_LINK}accounts/register/verify/`, {
+      .post(`http://45.149.79.206:8000/api/v1/accounts/register/verify/`, {
         otp,
         phone_number,
         type: selectedType,
@@ -51,7 +51,6 @@ const Register = () => {
 
         setItem("access", data.access);
         setItem("refresh", data.refresh);
-        console.log("success! ", data);
       })
       .catch((err) => {
         console.log("err! ", err);

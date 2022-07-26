@@ -13,6 +13,7 @@ import {
   textFieldsStyles,
 } from "./renderedTextFieldsStyles";
 import SelectTextField from "./SelectTextField";
+import { format } from "date-fns-jalali";
 
 const selectItems = [];
 
@@ -69,9 +70,11 @@ const RenderedTextFieldsItems = ({
           <DatePicker
             mask="____/__/__"
             value={selectsSelectedValue["birth_day"]}
-            onChange={(newValue) =>
-              setSelectsSelectedValue({ birth_day: newValue })
-            }
+            onChange={(newValue) => {
+              setSelectsSelectedValue({
+                birth_day: new Date(newValue).toISOString().split("T")[0],
+              });
+            }}
             renderInput={(params) => (
               <TextField
                 sx={{
@@ -92,8 +95,6 @@ const RenderedTextFieldsItems = ({
     };
     return types[type];
   };
-
-  console.log("selectsSelectedValue", selectsSelectedValue);
 
   const defaultInput = (inputProps) => {
     return (

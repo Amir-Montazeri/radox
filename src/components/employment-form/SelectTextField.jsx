@@ -2,10 +2,7 @@ import { TextField, MenuItem } from "@mui/material";
 import { textFieldsStyles } from "./renderedTextFieldsStyles";
 
 const SelectTextField = ({ name, selectorItems, selected, setSelected }) => {
-  // name === "city" && console.log(selectorItems);
-
   const handelChange = (e) => {
-    console.log({ [name]: e.target.value.toString() });
     setSelected({ [name]: e.target.value });
   };
   const renderedSelection = (items) =>

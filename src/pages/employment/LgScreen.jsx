@@ -3,7 +3,7 @@ import {
   AuthComponents,
   EmploymentForm,
   PersonalFooter,
-  OfficeHeader,
+  // OfficeHeader,
   OfficeFooter,
   EmploymentTable,
 } from "components";
@@ -15,7 +15,6 @@ const LgScreen = ({
   selectingValue,
   setSelectingsValue,
 }) => {
-  // console.log("personalTextFields: ", personalTextFields);
   return (
     <>
       <Box sx={formContainerStyles}>
@@ -42,7 +41,7 @@ const LgScreen = ({
           }}
         >
           <EmploymentTable
-            header={<OfficeHeader />}
+            // header={<OfficeHeader />}
             textFieldItems={officeTextFields}
             footer={<OfficeFooter />}
           />
