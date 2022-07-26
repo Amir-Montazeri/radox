@@ -59,7 +59,7 @@ export const personalTextFields01 = [
               },
               {
                 title: "کاردانی",
-                id: "Associate ",
+                id: "Associate",
               },
               {
                 title: "کارشناسی",

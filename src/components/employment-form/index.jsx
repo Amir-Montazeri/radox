@@ -50,7 +50,7 @@ const EmploymentForm = ({
         console.log("suc: ", res);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("err: ", err);
       });
   };
 

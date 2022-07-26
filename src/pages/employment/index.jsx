@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Box, Grid } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { EmploymentHeader } from "components";
 import useWindowSize from "hooks/useWindowSize";
 import { headerContainerStyles } from "./employmentStyles";
@@ -17,9 +18,10 @@ import {
   personalTextFields05,
   personalTextFields06,
 } from "./formData";
-import { getItem } from "lcoalStorage";
+import { getItem, removeItem } from "lcoalStorage";
 
 function Employment() {
+  const navigate = useNavigate();
   const { innerWidth } = useWindowSize();
   const [isLoading, setIsLoading] = useState(true);
   const [selectingValue, setSelectingsValue] = useState({});
@@ -103,6 +105,15 @@ function Employment() {
           } else if (res.data.code === -1) {
             console.log("err");
           }
+        })
+        .catch((err) => {
+          const { response } = err;
+          if (response.status === 401) {
+            removeItem("access");
+            removeItem("refresh");
+            navigate("/auth/login");
+          }
+          console.log("err: ", response);
         });
 
     axios
