@@ -1,7 +1,7 @@
 {
   "name": "radox",
   "version": "0.1.0",
-  "homepage": "http://radoooox.com/",
+  "homepage": "http://radoooox.com",
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^2.14.0",
@@ -31,7 +31,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "set \"CI=false\" && react-scripts build",
+    "build": "react-scripts build",
+    "build:staging": "REACT_APP_ENV=staging npm run build",
+    "build:production": "REACT_APP_ENV=production npm run build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",

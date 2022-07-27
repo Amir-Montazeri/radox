@@ -8,7 +8,7 @@ export const containerStyles = {
     padding: "15px",
     marginBottom: "10px",
     width: "280px",
-    height: "159px",
+    minHeight: "159px",
     background: "#FFE8E0",
     border: "1px solid #EE5D25",
   },

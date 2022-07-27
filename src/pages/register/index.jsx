@@ -10,6 +10,7 @@ import { Home } from "pages";
 import TextFieldsFooter from "./TextFieldsFooter";
 import { buttonItems, renderOnCodeSent, textFieldItems } from "./sampleDatas";
 import { setItem } from "lcoalStorage";
+import { api_url } from "api";
 
 const Register = () => {
   const [codeSent, setCodeSent] = useState(false),
@@ -24,7 +25,7 @@ const Register = () => {
   const handelSendingCode = (data) => {
     const { phone_number } = data;
     axios
-      .post(`http://45.149.79.206:8000/api/v1/accounts/register/`, {
+      .post(`${api_url}accounts/register/`, {
         phone_number,
       })
       .then((res) => {
@@ -41,7 +42,7 @@ const Register = () => {
   const handleSubmit = (data) => {
     const { otp, phone_number } = data;
     axios
-      .post(`http://45.149.79.206:8000/api/v1/accounts/register/verify/`, {
+      .post(`${api_url}accounts/register/verify/`, {
         otp,
         phone_number,
         type: selectedType,

@@ -17,6 +17,7 @@ import nationalityIcon from "assets/icons/nationality.svg";
 import { getItem, removeItem } from "lcoalStorage";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { api_url } from "api";
 
 function Supplier() {
   const navigate = useNavigate();
@@ -29,9 +30,13 @@ function Supplier() {
       personalTextFields04,
     });
   const [selectingValue, setSelectingsValue] = useState({});
+  const [officeSelectingValue, setOfficeSelectingsValue] = useState({
+    owner: 1,
+  });
   const [isLoading, setIsLoading] = useState(true);
   const [statesData, setStatesData] = useState();
   const [citiesData, setCitiesData] = useState({});
+  const [productsData, setProductsData] = useState(null);
 
   const updateCityAndState = (type, data) => {
     switch (type) {
@@ -85,7 +90,7 @@ function Supplier() {
     const access = getItem("access");
     isLoading &&
       axios
-        .get(`http://45.149.79.206:8000/api/v1/accounts/supplier/info/`, {
+        .get(`${api_url}accounts/supplier/info/`, {
           headers: {
             Authorization: `Bearer ${access}`,
           },
@@ -109,11 +114,24 @@ function Supplier() {
           }
         });
 
+    axios.get(`${api_url}locations/state/`).then((res) => {
+      const { data } = res;
+      updateCityAndState("state", data);
+    });
+
     axios
-      .get(`http://45.149.79.206:8000/api/v1/locations/state/`)
+      .get(`${api_url}market/products/`, {
+        headers: {
+          Authorization: `Bearer ${access}`,
+        },
+      })
       .then((res) => {
         const { data } = res;
-        updateCityAndState("state", data);
+        setProductsData(data);
+        console.log("new-data: ", data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -124,9 +142,7 @@ function Supplier() {
         updateCityAndState("city", citiesData[selectingValue.state]);
       } else {
         axios
-          .get(
-            `http://45.149.79.206:8000/api/v1/locations/state/${selectingValue.state}/`
-          )
+          .get(`${api_url}locations/state/${selectingValue.state}/`)
           .then((res) => {
             const { data } = res;
             updateCityAndState("city", data.citys);
@@ -150,6 +166,9 @@ function Supplier() {
           selectingValue={selectingValue}
           setSelectingsValue={handleValueChanged}
           personalTextFields={Object.values(debouncedPersonalTextFields)}
+          officeSelectingValue={officeSelectingValue}
+          setOfficeSelectingsValue={setOfficeSelectingsValue}
+          productsData={productsData}
         />
       ) : (
         <div></div>

@@ -6,56 +6,26 @@ import {
 } from "./officeHeaderStyles";
 
 const RenderedItems = ({ items }) =>
-  items.map((item) => {
+  items?.map((item) => {
     return (
-      <Grid item key={item.id} sx={itemsContainerStyles}>
-        <Typography component="h3" color="#EE5D25" sx={rtlDirection}>
-          <Typography variant="h5" component="span">
-            {item.work_position}
-          </Typography>{" "}
-          <Typography variant="h6" component="span">
-            در
-          </Typography>{" "}
-          <Typography variant="h5" component="span">
-            {item.organization}
-          </Typography>
+      <Grid item key={item.name} sx={itemsContainerStyles}>
+        <Typography
+          variant="h5"
+          component="h3"
+          color="#EE5D25"
+          sx={rtlDirection}
+        >
+          {item.name}
         </Typography>
         <Typography sx={rtlDirection}>
-          <Typography variant="body1" component="span">
-            مدت فعالیت:
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            {item.year}
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            سال
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            {item.month}
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            ماه
-          </Typography>
+          نوع تحویل:{" "}
+          {item.type_of_delivery
+            .replace("free", "رایگان")
+            .replace("monetary", "هزینه دار")}
         </Typography>
-        <Typography sx={rtlDirection}>
-          <Typography variant="body1" component="span">
-            حقوق دریافتی:
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            {item.salary}
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            میلیون تومان
-          </Typography>
-        </Typography>
-        <Typography sx={rtlDirection}>
-          <Typography variant="body1" component="span">
-            خروج به دلیل
-          </Typography>{" "}
-          <Typography variant="body1" component="span">
-            {item.reason_of_quit}
-          </Typography>
-        </Typography>
+        <Typography sx={rtlDirection}>قیمت: {item.price} تومان</Typography>
+        <Typography sx={rtlDirection}>تعداد: {item.unit}</Typography>
+        <Typography sx={rtlDirection}>توضیحات: {item.description}</Typography>
         <Typography
           variant="body1"
           component="span"

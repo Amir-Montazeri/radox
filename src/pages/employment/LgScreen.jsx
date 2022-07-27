@@ -41,7 +41,6 @@ const LgScreen = ({
           }}
         >
           <EmploymentTable
-            // header={<OfficeHeader />}
             textFieldItems={officeTextFields}
             footer={<OfficeFooter />}
           />

@@ -23,19 +23,19 @@ const text = [
   },
 ];
 
-function SupplierHeader({ data = text }) {
-  const [selectedItem, setSelectedItem] = useState(data[0].name),
-    [addNewItem, setAddNewItem] = useState(null);
-  const activeStyles = selectedItem === "" ? activeItemContainerStyles : {};
-
+function SupplierHeader({ data = text, selectingValue, setSelectingsValue }) {
+  // const [selectedItem, setSelectedItem] = useState(data[0].name),
+  //   [addNewItem, setAddNewItem] = useState(null);
+  // const activeStyles =
+  //   selectingValue?.category === "" ? activeItemContainerStyles : {};
   return (
     <Box sx={containerStyles} component="ul">
       <RenderedItems
         items={data}
-        selectedItem={selectedItem}
-        setSelectedItem={setSelectedItem}
+        selectedItem={selectingValue?.category}
+        setSelectedItem={setSelectingsValue}
       />
-      {!addNewItem ? (
+      {/* {!addNewItem ? (
         <Box
           sx={{ ...itemsContainerStyles, ...activeStyles }}
           component="li"
@@ -61,7 +61,7 @@ function SupplierHeader({ data = text }) {
             fullWidth
           />
         </Box>
-      )}
+      )} */}
     </Box>
   );
 }

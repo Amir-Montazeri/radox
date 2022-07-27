@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import { api_url } from "api";
 import axios from "axios";
 import { getItem } from "lcoalStorage";
 import { useForm } from "react-hook-form";
@@ -7,6 +8,7 @@ import RenderedTextFieldsItems from "./RenderedTextFieldsItems";
 
 const EmploymentForm = ({
   header,
+  body,
   selectingValue,
   setSelectingsValue,
   textFieldItems,
@@ -37,7 +39,7 @@ const EmploymentForm = ({
     const access = getItem("access");
     axios
       .post(
-        "http://45.149.79.206:8000/api/v1/" + apiPath,
+        api_url + apiPath,
         {
           ...selectingValue,
           ...e,
@@ -65,6 +67,7 @@ const EmploymentForm = ({
       onSubmit={handleSubmit(onFormSubmited)}
     >
       <Grid item>{header}</Grid>
+      <Grid item>{body}</Grid>
       <Grid item>{renderedTextFields(textFieldItems)}</Grid>
       <Grid item>{footer}</Grid>
     </Grid>

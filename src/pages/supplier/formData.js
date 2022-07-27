@@ -109,82 +109,90 @@ export const personalTextFields01 = [
   ];
 
 export const officeTextFields = [
-  {
-    items: [
-      {
-        inputProps: {
-          name: "price",
-          placeholder: "قیمت محصول",
-          type: "number",
+  [
+    {
+      items: [
+        {
+          inputProps: {
+            name: "price",
+            placeholder: "قیمت محصول",
+            type: "number",
+          },
+          id: 0,
         },
-        id: 0,
-      },
-      {
-        inputProps: {
-          name: "item_name",
-          placeholder: "نام محصول",
-          type: "text",
+        {
+          inputProps: {
+            name: "name",
+            placeholder: "نام محصول",
+            type: "text",
+          },
+          id: 1,
         },
-        id: 1,
-      },
-    ],
-    id: 0,
-  },
-  {
-    items: [
-      {
-        inputProps: {
-          name: "send_type",
-          placeholder: "شهر",
-          type: "select",
-          selectItems: [
-            {
-              title: "هزینه دار",
-              value: "cost",
-            },
-            {
-              title: "رایگان",
-              value: "free",
-            },
-          ],
+      ],
+      id: 0,
+    },
+  ],
+  [
+    {
+      items: [
+        {
+          inputProps: {
+            name: "type_of_delivery",
+            placeholder: "شهر",
+            type: "select",
+            selectItems: [
+              {
+                title: "هزینه دار",
+                id: "monetary",
+              },
+              {
+                title: "رایگان",
+                id: "free",
+              },
+            ],
+          },
+          id: 2,
         },
-        id: 2,
-      },
-      {
-        inputProps: {
-          name: "product_unit",
-          placeholder: "واحد حصول",
-          type: "text",
+        {
+          inputProps: {
+            name: "unit",
+            placeholder: "واحد حصول",
+            type: "text",
+          },
+          id: 3,
         },
-        id: 3,
-      },
-    ],
-    id: 1,
-  },
-  {
-    items: [
-      {
-        inputProps: {
-          name: "pic",
-          placeholder: "تصویر محصول",
-          type: "file",
+      ],
+      id: 1,
+    },
+  ],
+  [
+    {
+      items: [
+        {
+          inputProps: {
+            name: "pic",
+            placeholder: "تصویر محصول",
+            type: "file",
+          },
+          id: 4,
         },
-        id: 4,
-      },
-    ],
-    id: 2,
-  },
-  {
-    items: [
-      {
-        inputProps: {
-          name: "desc",
-          placeholder: "توضیحات تکمیلی",
-          type: "text",
+      ],
+      id: 2,
+    },
+  ],
+  [
+    {
+      items: [
+        {
+          inputProps: {
+            name: "description",
+            placeholder: "توضیحات تکمیلی",
+            type: "text",
+          },
+          id: 6,
         },
-        id: 6,
-      },
-    ],
-    id: 3,
-  },
+      ],
+      id: 3,
+    },
+  ],
 ];

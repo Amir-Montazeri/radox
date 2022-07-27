@@ -19,6 +19,7 @@ import {
   personalTextFields06,
 } from "./formData";
 import { getItem, removeItem } from "lcoalStorage";
+import { api_url } from "api";
 
 function Employment() {
   const navigate = useNavigate();
@@ -90,7 +91,7 @@ function Employment() {
     const access = getItem("access");
     isLoading &&
       axios
-        .get(`http://45.149.79.206:8000/api/v1/accounts/work/info/`, {
+        .get(`${api_url}accounts/work/info/`, {
           headers: {
             Authorization: `Bearer ${access}`,
           },
@@ -106,18 +107,14 @@ function Employment() {
         .catch((err) => {
           const { response } = err;
           if (response.status === 401) {
-            removeItem("access");
-            removeItem("refresh");
             navigate("/auth/login");
           }
         });
 
-    axios
-      .get(`http://45.149.79.206:8000/api/v1/locations/state/`)
-      .then((res) => {
-        const { data } = res;
-        updateCityAndState("state", data);
-      });
+    axios.get(`${api_url}locations/state/`).then((res) => {
+      const { data } = res;
+      updateCityAndState("state", data);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -127,9 +124,7 @@ function Employment() {
         updateCityAndState("city", citiesData[selectingValue.state]);
       } else {
         axios
-          .get(
-            `http://45.149.79.206:8000/api/v1/locations/state/${selectingValue.state}/`
-          )
+          .get(`${api_url}locations/state/${selectingValue.state}/`)
           .then((res) => {
             const { data } = res;
             updateCityAndState("city", data.citys);

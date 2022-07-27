@@ -13,7 +13,9 @@ const RenderedItems = ({ items, selectedItem, setSelectedItem }) => {
         key={item.name}
         sx={{ ...itemsContainerStyles, ...activeStyles }}
         component="li"
-        onClick={() => setSelectedItem(item.name)}
+        onClick={() =>
+          setSelectedItem({ ...selectedItem, category: item.name })
+        }
       >
         <Typography variant="body1" component="p">
           {item.placeholder}
