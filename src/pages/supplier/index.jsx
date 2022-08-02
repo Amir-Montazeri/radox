@@ -16,7 +16,7 @@ import genderIcon from "assets/icons/gender.svg";
 import nationalityIcon from "assets/icons/nationality.svg";
 import { getItem, removeItem } from "lcoalStorage";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { api_url } from "api";
 
 function Supplier() {
@@ -158,6 +158,7 @@ function Supplier() {
 
   return (
     <Box>
+      <Outlet />
       <Grid container sx={headerContainerStyles}>
         <EmploymentHeader headerItems={usualItems} avatarUrl={""} />
       </Grid>

@@ -12,6 +12,7 @@ import {
   SearchItem,
 } from "pages";
 import theme from "theme";
+import { ReadyToWorkModal } from "components";
 
 const App = () => {
   return (
@@ -28,7 +29,9 @@ const App = () => {
             </Route>
             <Route path="/employment" element={<Employment />} />
             <Route path="/types" element={<Types />} />
-            <Route path="/supplier" element={<Supplier />} />
+            <Route path="/supplier" element={<Supplier />}>
+              <Route path="ready-to-work" element={<ReadyToWorkModal />} />
+            </Route>
             <Route path="/search-item" element={<SearchItem />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Routes>

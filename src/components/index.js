@@ -1,5 +1,6 @@
 export { default as NavbarComponents } from "./navbar-components";
 export { default as ResNavInput } from "./res-nav-input";
+export { default as Modal } from "./modal";
 export { default as HomeComponents } from "./home-components";
 export { default as SwiperComponent } from "./swiper-component";
 export { default as AuthComponents } from "./auth-components";
@@ -15,3 +16,4 @@ export { default as OfficeFooter } from "./office-footer";
 export { default as TypesHeaderComponent } from "./types-header-component";
 export { default as TypesFooterComponent } from "./types-footer-component";
 export { default as SupplierHeader } from "./supplier-header";
+export { default as ReadyToWorkModal } from "./ready-to-work-modal";

@@ -6,7 +6,7 @@ const SelectTextField = ({ name, selectorItems, selected, setSelected }) => {
     setSelected({ [name]: e.target.value });
   };
   const renderedSelection = (items) =>
-    items.map(({ id, title }) => {
+    items?.map(({ id, title }) => {
       return (
         <MenuItem key={id || title} value={id}>
           {title}

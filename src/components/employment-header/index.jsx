@@ -16,7 +16,7 @@ const EmploymentHeader = ({ headerItems, avatarUrl }) => {
           justifyContent="space-evenly"
           key={item.id}
         >
-          <RenderedHeaderItems items={item.items} />
+          <RenderedHeaderItems items={item} />
         </Grid>
       );
     });

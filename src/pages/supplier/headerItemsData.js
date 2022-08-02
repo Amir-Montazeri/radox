@@ -54,6 +54,13 @@ export const usualItems = [
           bgcolor: "#fff",
           width: "148px",
         },
+        events: [
+          {
+            event: "click",
+            order: "navigate",
+            to: "/supplier/ready-to-work",
+          },
+        ],
         id: 4,
       },
       {

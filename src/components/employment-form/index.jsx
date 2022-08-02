@@ -19,7 +19,6 @@ const EmploymentForm = ({
   const { register, handleSubmit } = useForm();
   const renderedTextFields = (fields) =>
     fields?.map((item) => {
-      console.log("bug from here!");
       const { items, id } = item[0];
       return (
         <Grid container key={id} sx={textFeildsContainerStyles}>
